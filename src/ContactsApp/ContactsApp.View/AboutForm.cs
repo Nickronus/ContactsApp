@@ -10,17 +10,14 @@ using System.Windows.Forms;
 
 namespace ContactsApp.View
 {
-    public partial class ContactForm : Form
+    public partial class AboutForm : Form
     {
-        public ContactForm()
+        public AboutForm()
         {
             InitializeComponent();
-            addPhotoButton.FlatStyle = FlatStyle.Flat;
-            addPhotoButton.FlatAppearance.BorderSize = 1;
-            addPhotoButton.FlatAppearance.BorderColor = Color.White;
         }
 
-        private void ContactForm_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

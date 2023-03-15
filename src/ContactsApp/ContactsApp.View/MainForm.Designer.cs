@@ -30,28 +30,28 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.ContactsListBox = new System.Windows.Forms.ListBox();
-            this.FindTextBox = new System.Windows.Forms.TextBox();
-            this.FindLabel = new System.Windows.Forms.Label();
-            this.PersonPictureBox = new System.Windows.Forms.PictureBox();
-            this.EmailLabel = new System.Windows.Forms.Label();
-            this.FullNameLabel = new System.Windows.Forms.Label();
-            this.FullNameTextBox = new System.Windows.Forms.TextBox();
-            this.EmailTextBox = new System.Windows.Forms.TextBox();
-            this.PhoneNumberLabel = new System.Windows.Forms.Label();
-            this.PhoneNumberTextBox = new System.Windows.Forms.TextBox();
-            this.DateOfBirthTextBox = new System.Windows.Forms.TextBox();
-            this.DateOfBirthLabel = new System.Windows.Forms.Label();
-            this.VKLabel = new System.Windows.Forms.Label();
-            this.VKTextBox = new System.Windows.Forms.TextBox();
-            this.AddContactButton = new System.Windows.Forms.Button();
-            this.EditContactButton = new System.Windows.Forms.Button();
-            this.RemoveContactButton = new System.Windows.Forms.Button();
+            this.removeContactButton = new System.Windows.Forms.Button();
+            this.editContactButton = new System.Windows.Forms.Button();
+            this.addContactButton = new System.Windows.Forms.Button();
+            this.contactsListBox = new System.Windows.Forms.ListBox();
+            this.findTextBox = new System.Windows.Forms.TextBox();
+            this.findLabel = new System.Windows.Forms.Label();
+            this.vKTextBox = new System.Windows.Forms.TextBox();
+            this.vKLabel = new System.Windows.Forms.Label();
+            this.dateOfBirthLabel = new System.Windows.Forms.Label();
+            this.dateOfBirthTextBox = new System.Windows.Forms.TextBox();
+            this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
+            this.phoneNumberLabel = new System.Windows.Forms.Label();
+            this.fullNameLabel = new System.Windows.Forms.Label();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.fullNameTextBox = new System.Windows.Forms.TextBox();
+            this.personPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
             this.MainSplitContainer.Panel1.SuspendLayout();
             this.MainSplitContainer.Panel2.SuspendLayout();
             this.MainSplitContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PersonPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // MainSplitContainer
@@ -63,200 +63,200 @@
             // 
             // MainSplitContainer.Panel1
             // 
-            this.MainSplitContainer.Panel1.Controls.Add(this.RemoveContactButton);
-            this.MainSplitContainer.Panel1.Controls.Add(this.EditContactButton);
-            this.MainSplitContainer.Panel1.Controls.Add(this.AddContactButton);
-            this.MainSplitContainer.Panel1.Controls.Add(this.ContactsListBox);
-            this.MainSplitContainer.Panel1.Controls.Add(this.FindTextBox);
-            this.MainSplitContainer.Panel1.Controls.Add(this.FindLabel);
+            this.MainSplitContainer.Panel1.Controls.Add(this.removeContactButton);
+            this.MainSplitContainer.Panel1.Controls.Add(this.editContactButton);
+            this.MainSplitContainer.Panel1.Controls.Add(this.addContactButton);
+            this.MainSplitContainer.Panel1.Controls.Add(this.contactsListBox);
+            this.MainSplitContainer.Panel1.Controls.Add(this.findTextBox);
+            this.MainSplitContainer.Panel1.Controls.Add(this.findLabel);
             // 
             // MainSplitContainer.Panel2
             // 
-            this.MainSplitContainer.Panel2.Controls.Add(this.VKTextBox);
-            this.MainSplitContainer.Panel2.Controls.Add(this.VKLabel);
-            this.MainSplitContainer.Panel2.Controls.Add(this.DateOfBirthLabel);
-            this.MainSplitContainer.Panel2.Controls.Add(this.DateOfBirthTextBox);
-            this.MainSplitContainer.Panel2.Controls.Add(this.PhoneNumberTextBox);
-            this.MainSplitContainer.Panel2.Controls.Add(this.PhoneNumberLabel);
-            this.MainSplitContainer.Panel2.Controls.Add(this.FullNameLabel);
-            this.MainSplitContainer.Panel2.Controls.Add(this.EmailTextBox);
-            this.MainSplitContainer.Panel2.Controls.Add(this.EmailLabel);
-            this.MainSplitContainer.Panel2.Controls.Add(this.FullNameTextBox);
-            this.MainSplitContainer.Panel2.Controls.Add(this.PersonPictureBox);
+            this.MainSplitContainer.Panel2.Controls.Add(this.vKTextBox);
+            this.MainSplitContainer.Panel2.Controls.Add(this.vKLabel);
+            this.MainSplitContainer.Panel2.Controls.Add(this.dateOfBirthLabel);
+            this.MainSplitContainer.Panel2.Controls.Add(this.dateOfBirthTextBox);
+            this.MainSplitContainer.Panel2.Controls.Add(this.phoneNumberTextBox);
+            this.MainSplitContainer.Panel2.Controls.Add(this.phoneNumberLabel);
+            this.MainSplitContainer.Panel2.Controls.Add(this.fullNameLabel);
+            this.MainSplitContainer.Panel2.Controls.Add(this.emailTextBox);
+            this.MainSplitContainer.Panel2.Controls.Add(this.emailLabel);
+            this.MainSplitContainer.Panel2.Controls.Add(this.fullNameTextBox);
+            this.MainSplitContainer.Panel2.Controls.Add(this.personPictureBox);
             this.MainSplitContainer.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.MainSplitContainer_Panel2_Paint);
             this.MainSplitContainer.Size = new System.Drawing.Size(800, 450);
             this.MainSplitContainer.SplitterDistance = 266;
             this.MainSplitContainer.TabIndex = 0;
             // 
-            // ContactsListBox
+            // removeContactButton
             // 
-            this.ContactsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.removeContactButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.removeContactButton.BackColor = System.Drawing.Color.White;
+            this.removeContactButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("removeContactButton.BackgroundImage")));
+            this.removeContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.removeContactButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.removeContactButton.Location = new System.Drawing.Point(180, 410);
+            this.removeContactButton.Name = "removeContactButton";
+            this.removeContactButton.Size = new System.Drawing.Size(83, 40);
+            this.removeContactButton.TabIndex = 12;
+            this.removeContactButton.UseVisualStyleBackColor = false;
+            // 
+            // editContactButton
+            // 
+            this.editContactButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.editContactButton.BackColor = System.Drawing.Color.White;
+            this.editContactButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editContactButton.BackgroundImage")));
+            this.editContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.editContactButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editContactButton.Location = new System.Drawing.Point(97, 410);
+            this.editContactButton.Name = "editContactButton";
+            this.editContactButton.Size = new System.Drawing.Size(83, 40);
+            this.editContactButton.TabIndex = 11;
+            this.editContactButton.UseVisualStyleBackColor = false;
+            // 
+            // addContactButton
+            // 
+            this.addContactButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.addContactButton.BackColor = System.Drawing.Color.White;
+            this.addContactButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addContactButton.BackgroundImage")));
+            this.addContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.addContactButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addContactButton.ForeColor = System.Drawing.Color.White;
+            this.addContactButton.Location = new System.Drawing.Point(14, 410);
+            this.addContactButton.Name = "addContactButton";
+            this.addContactButton.Size = new System.Drawing.Size(83, 40);
+            this.addContactButton.TabIndex = 3;
+            this.addContactButton.UseVisualStyleBackColor = false;
+            // 
+            // contactsListBox
+            // 
+            this.contactsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ContactsListBox.FormattingEnabled = true;
-            this.ContactsListBox.Location = new System.Drawing.Point(14, 36);
-            this.ContactsListBox.Name = "ContactsListBox";
-            this.ContactsListBox.Size = new System.Drawing.Size(249, 368);
-            this.ContactsListBox.TabIndex = 2;
+            this.contactsListBox.FormattingEnabled = true;
+            this.contactsListBox.Location = new System.Drawing.Point(14, 36);
+            this.contactsListBox.Name = "contactsListBox";
+            this.contactsListBox.Size = new System.Drawing.Size(249, 368);
+            this.contactsListBox.TabIndex = 2;
             // 
-            // FindTextBox
+            // findTextBox
             // 
-            this.FindTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.findTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.FindTextBox.Location = new System.Drawing.Point(49, 10);
-            this.FindTextBox.Name = "FindTextBox";
-            this.FindTextBox.Size = new System.Drawing.Size(214, 20);
-            this.FindTextBox.TabIndex = 1;
+            this.findTextBox.Location = new System.Drawing.Point(49, 10);
+            this.findTextBox.Name = "findTextBox";
+            this.findTextBox.Size = new System.Drawing.Size(214, 20);
+            this.findTextBox.TabIndex = 1;
             // 
-            // FindLabel
+            // findLabel
             // 
-            this.FindLabel.AutoSize = true;
-            this.FindLabel.Location = new System.Drawing.Point(13, 13);
-            this.FindLabel.Name = "FindLabel";
-            this.FindLabel.Size = new System.Drawing.Size(30, 13);
-            this.FindLabel.TabIndex = 0;
-            this.FindLabel.Text = "Find:";
-            this.FindLabel.Click += new System.EventHandler(this.label1_Click);
+            this.findLabel.AutoSize = true;
+            this.findLabel.Location = new System.Drawing.Point(13, 13);
+            this.findLabel.Name = "findLabel";
+            this.findLabel.Size = new System.Drawing.Size(30, 13);
+            this.findLabel.TabIndex = 0;
+            this.findLabel.Text = "Find:";
+            this.findLabel.Click += new System.EventHandler(this.label1_Click);
             // 
-            // PersonPictureBox
+            // vKTextBox
             // 
-            this.PersonPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PersonPictureBox.BackgroundImage")));
-            this.PersonPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PersonPictureBox.Location = new System.Drawing.Point(4, 10);
-            this.PersonPictureBox.Name = "PersonPictureBox";
-            this.PersonPictureBox.Size = new System.Drawing.Size(100, 100);
-            this.PersonPictureBox.TabIndex = 0;
-            this.PersonPictureBox.TabStop = false;
-            this.PersonPictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.vKTextBox.Location = new System.Drawing.Point(110, 280);
+            this.vKTextBox.Name = "vKTextBox";
+            this.vKTextBox.Size = new System.Drawing.Size(204, 20);
+            this.vKTextBox.TabIndex = 10;
             // 
-            // EmailLabel
+            // vKLabel
             // 
-            this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(110, 74);
-            this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(38, 13);
-            this.EmailLabel.TabIndex = 3;
-            this.EmailLabel.Text = "E-mail:";
+            this.vKLabel.AutoSize = true;
+            this.vKLabel.Location = new System.Drawing.Point(110, 264);
+            this.vKLabel.Name = "vKLabel";
+            this.vKLabel.Size = new System.Drawing.Size(24, 13);
+            this.vKLabel.TabIndex = 9;
+            this.vKLabel.Text = "VK:";
+            this.vKLabel.Click += new System.EventHandler(this.VKLabel_Click);
             // 
-            // FullNameLabel
+            // dateOfBirthLabel
             // 
-            this.FullNameLabel.AutoSize = true;
-            this.FullNameLabel.Location = new System.Drawing.Point(110, 13);
-            this.FullNameLabel.Name = "FullNameLabel";
-            this.FullNameLabel.Size = new System.Drawing.Size(57, 13);
-            this.FullNameLabel.TabIndex = 1;
-            this.FullNameLabel.Text = "Full Name:";
+            this.dateOfBirthLabel.AutoSize = true;
+            this.dateOfBirthLabel.Location = new System.Drawing.Point(110, 201);
+            this.dateOfBirthLabel.Name = "dateOfBirthLabel";
+            this.dateOfBirthLabel.Size = new System.Drawing.Size(69, 13);
+            this.dateOfBirthLabel.TabIndex = 8;
+            this.dateOfBirthLabel.Text = "Date of Birth:";
             // 
-            // FullNameTextBox
+            // dateOfBirthTextBox
             // 
-            this.FullNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dateOfBirthTextBox.Location = new System.Drawing.Point(110, 217);
+            this.dateOfBirthTextBox.Name = "dateOfBirthTextBox";
+            this.dateOfBirthTextBox.Size = new System.Drawing.Size(204, 20);
+            this.dateOfBirthTextBox.TabIndex = 7;
+            // 
+            // phoneNumberTextBox
+            // 
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(110, 154);
+            this.phoneNumberTextBox.Name = "phoneNumberTextBox";
+            this.phoneNumberTextBox.Size = new System.Drawing.Size(204, 20);
+            this.phoneNumberTextBox.TabIndex = 6;
+            // 
+            // phoneNumberLabel
+            // 
+            this.phoneNumberLabel.AutoSize = true;
+            this.phoneNumberLabel.Location = new System.Drawing.Point(110, 138);
+            this.phoneNumberLabel.Name = "phoneNumberLabel";
+            this.phoneNumberLabel.Size = new System.Drawing.Size(78, 13);
+            this.phoneNumberLabel.TabIndex = 5;
+            this.phoneNumberLabel.Text = "PhoneNumber:";
+            // 
+            // fullNameLabel
+            // 
+            this.fullNameLabel.AutoSize = true;
+            this.fullNameLabel.Location = new System.Drawing.Point(110, 13);
+            this.fullNameLabel.Name = "fullNameLabel";
+            this.fullNameLabel.Size = new System.Drawing.Size(57, 13);
+            this.fullNameLabel.TabIndex = 1;
+            this.fullNameLabel.Text = "Full Name:";
+            // 
+            // emailTextBox
+            // 
+            this.emailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.FullNameTextBox.Location = new System.Drawing.Point(110, 29);
-            this.FullNameTextBox.Name = "FullNameTextBox";
-            this.FullNameTextBox.Size = new System.Drawing.Size(417, 20);
-            this.FullNameTextBox.TabIndex = 2;
-            this.FullNameTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.emailTextBox.Location = new System.Drawing.Point(110, 90);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(417, 20);
+            this.emailTextBox.TabIndex = 4;
             // 
-            // EmailTextBox
+            // emailLabel
             // 
-            this.EmailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Location = new System.Drawing.Point(110, 74);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(38, 13);
+            this.emailLabel.TabIndex = 3;
+            this.emailLabel.Text = "E-mail:";
+            // 
+            // fullNameTextBox
+            // 
+            this.fullNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmailTextBox.Location = new System.Drawing.Point(110, 90);
-            this.EmailTextBox.Name = "EmailTextBox";
-            this.EmailTextBox.Size = new System.Drawing.Size(417, 20);
-            this.EmailTextBox.TabIndex = 4;
+            this.fullNameTextBox.Location = new System.Drawing.Point(110, 29);
+            this.fullNameTextBox.Name = "fullNameTextBox";
+            this.fullNameTextBox.Size = new System.Drawing.Size(417, 20);
+            this.fullNameTextBox.TabIndex = 2;
+            this.fullNameTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // PhoneNumberLabel
+            // personPictureBox
             // 
-            this.PhoneNumberLabel.AutoSize = true;
-            this.PhoneNumberLabel.Location = new System.Drawing.Point(110, 138);
-            this.PhoneNumberLabel.Name = "PhoneNumberLabel";
-            this.PhoneNumberLabel.Size = new System.Drawing.Size(78, 13);
-            this.PhoneNumberLabel.TabIndex = 5;
-            this.PhoneNumberLabel.Text = "PhoneNumber:";
-            // 
-            // PhoneNumberTextBox
-            // 
-            this.PhoneNumberTextBox.Location = new System.Drawing.Point(110, 154);
-            this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
-            this.PhoneNumberTextBox.Size = new System.Drawing.Size(204, 20);
-            this.PhoneNumberTextBox.TabIndex = 6;
-            // 
-            // DateOfBirthTextBox
-            // 
-            this.DateOfBirthTextBox.Location = new System.Drawing.Point(110, 217);
-            this.DateOfBirthTextBox.Name = "DateOfBirthTextBox";
-            this.DateOfBirthTextBox.Size = new System.Drawing.Size(204, 20);
-            this.DateOfBirthTextBox.TabIndex = 7;
-            // 
-            // DateOfBirthLabel
-            // 
-            this.DateOfBirthLabel.AutoSize = true;
-            this.DateOfBirthLabel.Location = new System.Drawing.Point(110, 201);
-            this.DateOfBirthLabel.Name = "DateOfBirthLabel";
-            this.DateOfBirthLabel.Size = new System.Drawing.Size(69, 13);
-            this.DateOfBirthLabel.TabIndex = 8;
-            this.DateOfBirthLabel.Text = "Date of Birth:";
-            // 
-            // VKLabel
-            // 
-            this.VKLabel.AutoSize = true;
-            this.VKLabel.Location = new System.Drawing.Point(110, 264);
-            this.VKLabel.Name = "VKLabel";
-            this.VKLabel.Size = new System.Drawing.Size(24, 13);
-            this.VKLabel.TabIndex = 9;
-            this.VKLabel.Text = "VK:";
-            this.VKLabel.Click += new System.EventHandler(this.VKLabel_Click);
-            // 
-            // VKTextBox
-            // 
-            this.VKTextBox.Location = new System.Drawing.Point(110, 280);
-            this.VKTextBox.Name = "VKTextBox";
-            this.VKTextBox.Size = new System.Drawing.Size(204, 20);
-            this.VKTextBox.TabIndex = 10;
-            // 
-            // AddContactButton
-            // 
-            this.AddContactButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddContactButton.BackColor = System.Drawing.Color.White;
-            this.AddContactButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddContactButton.BackgroundImage")));
-            this.AddContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.AddContactButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddContactButton.ForeColor = System.Drawing.Color.White;
-            this.AddContactButton.Location = new System.Drawing.Point(14, 410);
-            this.AddContactButton.Name = "AddContactButton";
-            this.AddContactButton.Size = new System.Drawing.Size(83, 40);
-            this.AddContactButton.TabIndex = 3;
-            this.AddContactButton.UseVisualStyleBackColor = false;
-            // 
-            // EditContactButton
-            // 
-            this.EditContactButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.EditContactButton.BackColor = System.Drawing.Color.White;
-            this.EditContactButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("EditContactButton.BackgroundImage")));
-            this.EditContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.EditContactButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.EditContactButton.Location = new System.Drawing.Point(97, 410);
-            this.EditContactButton.Name = "EditContactButton";
-            this.EditContactButton.Size = new System.Drawing.Size(83, 40);
-            this.EditContactButton.TabIndex = 11;
-            this.EditContactButton.UseVisualStyleBackColor = false;
-            // 
-            // RemoveContactButton
-            // 
-            this.RemoveContactButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.RemoveContactButton.BackColor = System.Drawing.Color.White;
-            this.RemoveContactButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RemoveContactButton.BackgroundImage")));
-            this.RemoveContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.RemoveContactButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RemoveContactButton.Location = new System.Drawing.Point(180, 410);
-            this.RemoveContactButton.Name = "RemoveContactButton";
-            this.RemoveContactButton.Size = new System.Drawing.Size(83, 40);
-            this.RemoveContactButton.TabIndex = 12;
-            this.RemoveContactButton.UseVisualStyleBackColor = false;
+            this.personPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("personPictureBox.BackgroundImage")));
+            this.personPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.personPictureBox.Location = new System.Drawing.Point(4, 10);
+            this.personPictureBox.Name = "personPictureBox";
+            this.personPictureBox.Size = new System.Drawing.Size(100, 100);
+            this.personPictureBox.TabIndex = 0;
+            this.personPictureBox.TabStop = false;
+            this.personPictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // MainForm
             // 
@@ -273,7 +273,7 @@
             this.MainSplitContainer.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).EndInit();
             this.MainSplitContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PersonPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -281,23 +281,23 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer MainSplitContainer;
-        private System.Windows.Forms.Label FindLabel;
-        private System.Windows.Forms.TextBox FindTextBox;
-        private System.Windows.Forms.ListBox ContactsListBox;
-        private System.Windows.Forms.PictureBox PersonPictureBox;
-        private System.Windows.Forms.Label FullNameLabel;
-        private System.Windows.Forms.TextBox EmailTextBox;
-        private System.Windows.Forms.Label EmailLabel;
-        private System.Windows.Forms.TextBox FullNameTextBox;
-        private System.Windows.Forms.TextBox PhoneNumberTextBox;
-        private System.Windows.Forms.Label PhoneNumberLabel;
-        private System.Windows.Forms.Label DateOfBirthLabel;
-        private System.Windows.Forms.TextBox DateOfBirthTextBox;
-        private System.Windows.Forms.TextBox VKTextBox;
-        private System.Windows.Forms.Label VKLabel;
-        private System.Windows.Forms.Button RemoveContactButton;
-        private System.Windows.Forms.Button EditContactButton;
-        private System.Windows.Forms.Button AddContactButton;
+        private System.Windows.Forms.Label findLabel;
+        private System.Windows.Forms.TextBox findTextBox;
+        private System.Windows.Forms.ListBox contactsListBox;
+        private System.Windows.Forms.PictureBox personPictureBox;
+        private System.Windows.Forms.Label fullNameLabel;
+        private System.Windows.Forms.TextBox emailTextBox;
+        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.TextBox fullNameTextBox;
+        private System.Windows.Forms.TextBox phoneNumberTextBox;
+        private System.Windows.Forms.Label phoneNumberLabel;
+        private System.Windows.Forms.Label dateOfBirthLabel;
+        private System.Windows.Forms.TextBox dateOfBirthTextBox;
+        private System.Windows.Forms.TextBox vKTextBox;
+        private System.Windows.Forms.Label vKLabel;
+        private System.Windows.Forms.Button removeContactButton;
+        private System.Windows.Forms.Button editContactButton;
+        private System.Windows.Forms.Button addContactButton;
     }
 }
 

@@ -29,146 +29,158 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContactForm));
-            this.VKTextBox = new System.Windows.Forms.TextBox();
-            this.VKLabel = new System.Windows.Forms.Label();
-            this.DateOfBirthLabel = new System.Windows.Forms.Label();
-            this.DateOfBirthTextBox = new System.Windows.Forms.TextBox();
-            this.PhoneNumberTextBox = new System.Windows.Forms.TextBox();
-            this.PhoneNumberLabel = new System.Windows.Forms.Label();
-            this.FullNameLabel = new System.Windows.Forms.Label();
-            this.EmailTextBox = new System.Windows.Forms.TextBox();
-            this.EmailLabel = new System.Windows.Forms.Label();
-            this.FullNameTextBox = new System.Windows.Forms.TextBox();
-            this.PersonPictureBox = new System.Windows.Forms.PictureBox();
+            this.vKTextBox = new System.Windows.Forms.TextBox();
+            this.vKLabel = new System.Windows.Forms.Label();
+            this.dateOfBirthLabel = new System.Windows.Forms.Label();
+            this.dateOfBirthTextBox = new System.Windows.Forms.TextBox();
+            this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
+            this.phoneNumberLabel = new System.Windows.Forms.Label();
+            this.fullNameLabel = new System.Windows.Forms.Label();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.fullNameTextBox = new System.Windows.Forms.TextBox();
+            this.personPictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.OKButton = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.PersonPictureBox)).BeginInit();
+            this.oKButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.addPhotoButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // VKTextBox
+            // vKTextBox
             // 
-            this.VKTextBox.Location = new System.Drawing.Point(118, 282);
-            this.VKTextBox.Name = "VKTextBox";
-            this.VKTextBox.Size = new System.Drawing.Size(204, 20);
-            this.VKTextBox.TabIndex = 21;
+            this.vKTextBox.Location = new System.Drawing.Point(118, 282);
+            this.vKTextBox.Name = "vKTextBox";
+            this.vKTextBox.Size = new System.Drawing.Size(204, 20);
+            this.vKTextBox.TabIndex = 21;
             // 
-            // VKLabel
+            // vKLabel
             // 
-            this.VKLabel.AutoSize = true;
-            this.VKLabel.Location = new System.Drawing.Point(118, 266);
-            this.VKLabel.Name = "VKLabel";
-            this.VKLabel.Size = new System.Drawing.Size(24, 13);
-            this.VKLabel.TabIndex = 20;
-            this.VKLabel.Text = "VK:";
+            this.vKLabel.AutoSize = true;
+            this.vKLabel.Location = new System.Drawing.Point(118, 266);
+            this.vKLabel.Name = "vKLabel";
+            this.vKLabel.Size = new System.Drawing.Size(24, 13);
+            this.vKLabel.TabIndex = 20;
+            this.vKLabel.Text = "VK:";
             // 
-            // DateOfBirthLabel
+            // dateOfBirthLabel
             // 
-            this.DateOfBirthLabel.AutoSize = true;
-            this.DateOfBirthLabel.Location = new System.Drawing.Point(118, 203);
-            this.DateOfBirthLabel.Name = "DateOfBirthLabel";
-            this.DateOfBirthLabel.Size = new System.Drawing.Size(69, 13);
-            this.DateOfBirthLabel.TabIndex = 19;
-            this.DateOfBirthLabel.Text = "Date of Birth:";
+            this.dateOfBirthLabel.AutoSize = true;
+            this.dateOfBirthLabel.Location = new System.Drawing.Point(118, 203);
+            this.dateOfBirthLabel.Name = "dateOfBirthLabel";
+            this.dateOfBirthLabel.Size = new System.Drawing.Size(69, 13);
+            this.dateOfBirthLabel.TabIndex = 19;
+            this.dateOfBirthLabel.Text = "Date of Birth:";
             // 
-            // DateOfBirthTextBox
+            // dateOfBirthTextBox
             // 
-            this.DateOfBirthTextBox.Location = new System.Drawing.Point(118, 219);
-            this.DateOfBirthTextBox.Name = "DateOfBirthTextBox";
-            this.DateOfBirthTextBox.Size = new System.Drawing.Size(204, 20);
-            this.DateOfBirthTextBox.TabIndex = 18;
+            this.dateOfBirthTextBox.Location = new System.Drawing.Point(118, 219);
+            this.dateOfBirthTextBox.Name = "dateOfBirthTextBox";
+            this.dateOfBirthTextBox.Size = new System.Drawing.Size(204, 20);
+            this.dateOfBirthTextBox.TabIndex = 18;
             // 
-            // PhoneNumberTextBox
+            // phoneNumberTextBox
             // 
-            this.PhoneNumberTextBox.Location = new System.Drawing.Point(118, 156);
-            this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
-            this.PhoneNumberTextBox.Size = new System.Drawing.Size(204, 20);
-            this.PhoneNumberTextBox.TabIndex = 17;
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(118, 156);
+            this.phoneNumberTextBox.Name = "phoneNumberTextBox";
+            this.phoneNumberTextBox.Size = new System.Drawing.Size(204, 20);
+            this.phoneNumberTextBox.TabIndex = 17;
             // 
-            // PhoneNumberLabel
+            // phoneNumberLabel
             // 
-            this.PhoneNumberLabel.AutoSize = true;
-            this.PhoneNumberLabel.Location = new System.Drawing.Point(118, 140);
-            this.PhoneNumberLabel.Name = "PhoneNumberLabel";
-            this.PhoneNumberLabel.Size = new System.Drawing.Size(78, 13);
-            this.PhoneNumberLabel.TabIndex = 16;
-            this.PhoneNumberLabel.Text = "PhoneNumber:";
+            this.phoneNumberLabel.AutoSize = true;
+            this.phoneNumberLabel.Location = new System.Drawing.Point(118, 140);
+            this.phoneNumberLabel.Name = "phoneNumberLabel";
+            this.phoneNumberLabel.Size = new System.Drawing.Size(78, 13);
+            this.phoneNumberLabel.TabIndex = 16;
+            this.phoneNumberLabel.Text = "PhoneNumber:";
             // 
-            // FullNameLabel
+            // fullNameLabel
             // 
-            this.FullNameLabel.AutoSize = true;
-            this.FullNameLabel.Location = new System.Drawing.Point(118, 15);
-            this.FullNameLabel.Name = "FullNameLabel";
-            this.FullNameLabel.Size = new System.Drawing.Size(57, 13);
-            this.FullNameLabel.TabIndex = 12;
-            this.FullNameLabel.Text = "Full Name:";
+            this.fullNameLabel.AutoSize = true;
+            this.fullNameLabel.Location = new System.Drawing.Point(118, 15);
+            this.fullNameLabel.Name = "fullNameLabel";
+            this.fullNameLabel.Size = new System.Drawing.Size(57, 13);
+            this.fullNameLabel.TabIndex = 12;
+            this.fullNameLabel.Text = "Full Name:";
             // 
-            // EmailTextBox
+            // emailTextBox
             // 
-            this.EmailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.emailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmailTextBox.Location = new System.Drawing.Point(118, 92);
-            this.EmailTextBox.Name = "EmailTextBox";
-            this.EmailTextBox.Size = new System.Drawing.Size(406, 20);
-            this.EmailTextBox.TabIndex = 15;
+            this.emailTextBox.Location = new System.Drawing.Point(118, 92);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(406, 20);
+            this.emailTextBox.TabIndex = 15;
             // 
-            // EmailLabel
+            // emailLabel
             // 
-            this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(118, 76);
-            this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(38, 13);
-            this.EmailLabel.TabIndex = 14;
-            this.EmailLabel.Text = "E-mail:";
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Location = new System.Drawing.Point(118, 76);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(38, 13);
+            this.emailLabel.TabIndex = 14;
+            this.emailLabel.Text = "E-mail:";
             // 
-            // FullNameTextBox
+            // fullNameTextBox
             // 
-            this.FullNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.fullNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.FullNameTextBox.Location = new System.Drawing.Point(118, 31);
-            this.FullNameTextBox.Name = "FullNameTextBox";
-            this.FullNameTextBox.Size = new System.Drawing.Size(406, 20);
-            this.FullNameTextBox.TabIndex = 13;
+            this.fullNameTextBox.Location = new System.Drawing.Point(118, 31);
+            this.fullNameTextBox.Name = "fullNameTextBox";
+            this.fullNameTextBox.Size = new System.Drawing.Size(406, 20);
+            this.fullNameTextBox.TabIndex = 13;
             // 
-            // PersonPictureBox
+            // personPictureBox
             // 
-            this.PersonPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PersonPictureBox.BackgroundImage")));
-            this.PersonPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PersonPictureBox.Location = new System.Drawing.Point(12, 12);
-            this.PersonPictureBox.Name = "PersonPictureBox";
-            this.PersonPictureBox.Size = new System.Drawing.Size(100, 100);
-            this.PersonPictureBox.TabIndex = 11;
-            this.PersonPictureBox.TabStop = false;
+            this.personPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("personPictureBox.BackgroundImage")));
+            this.personPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.personPictureBox.Location = new System.Drawing.Point(12, 12);
+            this.personPictureBox.Name = "personPictureBox";
+            this.personPictureBox.Size = new System.Drawing.Size(100, 100);
+            this.personPictureBox.TabIndex = 11;
+            this.personPictureBox.TabStop = false;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox1.Controls.Add(this.CancelButton);
-            this.groupBox1.Controls.Add(this.OKButton);
+            this.groupBox1.Controls.Add(this.cancelButton);
+            this.groupBox1.Controls.Add(this.oKButton);
             this.groupBox1.Location = new System.Drawing.Point(-3, 327);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(535, 58);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             // 
-            // OKButton
+            // oKButton
             // 
-            this.OKButton.Location = new System.Drawing.Point(342, 20);
-            this.OKButton.Name = "OKButton";
-            this.OKButton.Size = new System.Drawing.Size(75, 23);
-            this.OKButton.TabIndex = 0;
-            this.OKButton.Text = "OK";
-            this.OKButton.UseVisualStyleBackColor = true;
+            this.oKButton.Location = new System.Drawing.Point(342, 20);
+            this.oKButton.Name = "oKButton";
+            this.oKButton.Size = new System.Drawing.Size(75, 23);
+            this.oKButton.TabIndex = 0;
+            this.oKButton.Text = "OK";
+            this.oKButton.UseVisualStyleBackColor = true;
             // 
-            // CancelButton
+            // cancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(423, 20);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(75, 23);
-            this.CancelButton.TabIndex = 1;
-            this.CancelButton.Text = "Cancel";
-            this.CancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Location = new System.Drawing.Point(423, 20);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 1;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            // 
+            // addPhotoButton
+            // 
+            this.addPhotoButton.BackColor = System.Drawing.Color.White;
+            this.addPhotoButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addPhotoButton.BackgroundImage")));
+            this.addPhotoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.addPhotoButton.Location = new System.Drawing.Point(12, 118);
+            this.addPhotoButton.Name = "addPhotoButton";
+            this.addPhotoButton.Size = new System.Drawing.Size(100, 47);
+            this.addPhotoButton.TabIndex = 23;
+            this.addPhotoButton.UseVisualStyleBackColor = false;
             // 
             // ContactForm
             // 
@@ -176,21 +188,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(527, 377);
+            this.Controls.Add(this.addPhotoButton);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.VKTextBox);
-            this.Controls.Add(this.VKLabel);
-            this.Controls.Add(this.DateOfBirthLabel);
-            this.Controls.Add(this.DateOfBirthTextBox);
-            this.Controls.Add(this.PhoneNumberTextBox);
-            this.Controls.Add(this.PhoneNumberLabel);
-            this.Controls.Add(this.FullNameLabel);
-            this.Controls.Add(this.EmailTextBox);
-            this.Controls.Add(this.EmailLabel);
-            this.Controls.Add(this.FullNameTextBox);
-            this.Controls.Add(this.PersonPictureBox);
+            this.Controls.Add(this.vKTextBox);
+            this.Controls.Add(this.vKLabel);
+            this.Controls.Add(this.dateOfBirthLabel);
+            this.Controls.Add(this.dateOfBirthTextBox);
+            this.Controls.Add(this.phoneNumberTextBox);
+            this.Controls.Add(this.phoneNumberLabel);
+            this.Controls.Add(this.fullNameLabel);
+            this.Controls.Add(this.emailTextBox);
+            this.Controls.Add(this.emailLabel);
+            this.Controls.Add(this.fullNameTextBox);
+            this.Controls.Add(this.personPictureBox);
             this.Name = "ContactForm";
             this.Text = "ContactForm";
-            ((System.ComponentModel.ISupportInitialize)(this.PersonPictureBox)).EndInit();
+            this.Load += new System.EventHandler(this.ContactForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -199,19 +213,20 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox VKTextBox;
-        private System.Windows.Forms.Label VKLabel;
-        private System.Windows.Forms.Label DateOfBirthLabel;
-        private System.Windows.Forms.TextBox DateOfBirthTextBox;
-        private System.Windows.Forms.TextBox PhoneNumberTextBox;
-        private System.Windows.Forms.Label PhoneNumberLabel;
-        private System.Windows.Forms.Label FullNameLabel;
-        private System.Windows.Forms.TextBox EmailTextBox;
-        private System.Windows.Forms.Label EmailLabel;
-        private System.Windows.Forms.TextBox FullNameTextBox;
-        private System.Windows.Forms.PictureBox PersonPictureBox;
+        private System.Windows.Forms.TextBox vKTextBox;
+        private System.Windows.Forms.Label vKLabel;
+        private System.Windows.Forms.Label dateOfBirthLabel;
+        private System.Windows.Forms.TextBox dateOfBirthTextBox;
+        private System.Windows.Forms.TextBox phoneNumberTextBox;
+        private System.Windows.Forms.Label phoneNumberLabel;
+        private System.Windows.Forms.Label fullNameLabel;
+        private System.Windows.Forms.TextBox emailTextBox;
+        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.TextBox fullNameTextBox;
+        private System.Windows.Forms.PictureBox personPictureBox;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button CancelButton;
-        private System.Windows.Forms.Button OKButton;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button oKButton;
+        private System.Windows.Forms.Button addPhotoButton;
     }
 }

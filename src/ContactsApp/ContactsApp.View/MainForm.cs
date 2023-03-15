@@ -15,6 +15,15 @@ namespace ContactsApp.View
         public MainForm()
         {
             InitializeComponent();
+            addContactButton.FlatStyle = FlatStyle.Flat;
+            addContactButton.FlatAppearance.BorderSize = 1;
+            addContactButton.FlatAppearance.BorderColor = Color.White;
+            editContactButton.FlatStyle = FlatStyle.Flat;
+            editContactButton.FlatAppearance.BorderSize = 1;
+            editContactButton.FlatAppearance.BorderColor = Color.White;
+            removeContactButton.FlatStyle = FlatStyle.Flat;
+            removeContactButton.FlatAppearance.BorderSize = 1;
+            removeContactButton.FlatAppearance.BorderColor = Color.White;
         }
 
         private void label1_Click(object sender, EventArgs e)
