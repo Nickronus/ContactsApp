@@ -36,5 +36,15 @@ namespace ContactsApp.View
         {
 
         }
+
+        private void EmailLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VKLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
