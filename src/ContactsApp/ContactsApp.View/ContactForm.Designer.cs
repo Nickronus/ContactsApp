@@ -40,12 +40,12 @@
             this.emailLabel = new System.Windows.Forms.Label();
             this.fullNameTextBox = new System.Windows.Forms.TextBox();
             this.personPictureBox = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.oKButton = new System.Windows.Forms.Button();
+            this.buttonsGroupBox = new System.Windows.Forms.GroupBox();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.oKButton = new System.Windows.Forms.Button();
             this.addPhotoButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.buttonsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // vKTextBox
@@ -111,7 +111,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.emailTextBox.Location = new System.Drawing.Point(118, 92);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(406, 20);
+            this.emailTextBox.Size = new System.Drawing.Size(403, 20);
             this.emailTextBox.TabIndex = 15;
             // 
             // emailLabel
@@ -129,7 +129,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fullNameTextBox.Location = new System.Drawing.Point(118, 31);
             this.fullNameTextBox.Name = "fullNameTextBox";
-            this.fullNameTextBox.Size = new System.Drawing.Size(406, 20);
+            this.fullNameTextBox.Size = new System.Drawing.Size(403, 20);
             this.fullNameTextBox.TabIndex = 13;
             // 
             // personPictureBox
@@ -142,25 +142,16 @@
             this.personPictureBox.TabIndex = 11;
             this.personPictureBox.TabStop = false;
             // 
-            // groupBox1
+            // buttonsGroupBox
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox1.Controls.Add(this.cancelButton);
-            this.groupBox1.Controls.Add(this.oKButton);
-            this.groupBox1.Location = new System.Drawing.Point(-3, 327);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(535, 58);
-            this.groupBox1.TabIndex = 22;
-            this.groupBox1.TabStop = false;
-            // 
-            // oKButton
-            // 
-            this.oKButton.Location = new System.Drawing.Point(342, 20);
-            this.oKButton.Name = "oKButton";
-            this.oKButton.Size = new System.Drawing.Size(75, 23);
-            this.oKButton.TabIndex = 0;
-            this.oKButton.Text = "OK";
-            this.oKButton.UseVisualStyleBackColor = true;
+            this.buttonsGroupBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonsGroupBox.Controls.Add(this.cancelButton);
+            this.buttonsGroupBox.Controls.Add(this.oKButton);
+            this.buttonsGroupBox.Location = new System.Drawing.Point(-3, 327);
+            this.buttonsGroupBox.Name = "buttonsGroupBox";
+            this.buttonsGroupBox.Size = new System.Drawing.Size(535, 58);
+            this.buttonsGroupBox.TabIndex = 22;
+            this.buttonsGroupBox.TabStop = false;
             // 
             // cancelButton
             // 
@@ -170,6 +161,17 @@
             this.cancelButton.TabIndex = 1;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
+            // oKButton
+            // 
+            this.oKButton.Location = new System.Drawing.Point(342, 20);
+            this.oKButton.Name = "oKButton";
+            this.oKButton.Size = new System.Drawing.Size(75, 23);
+            this.oKButton.TabIndex = 0;
+            this.oKButton.Text = "OK";
+            this.oKButton.UseVisualStyleBackColor = true;
+            this.oKButton.Click += new System.EventHandler(this.oKButton_Click);
             // 
             // addPhotoButton
             // 
@@ -187,9 +189,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(527, 377);
+            this.ClientSize = new System.Drawing.Size(524, 377);
             this.Controls.Add(this.addPhotoButton);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.buttonsGroupBox);
             this.Controls.Add(this.vKTextBox);
             this.Controls.Add(this.vKLabel);
             this.Controls.Add(this.dateOfBirthLabel);
@@ -205,7 +207,7 @@
             this.Text = "ContactForm";
             this.Load += new System.EventHandler(this.ContactForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            this.buttonsGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,7 +226,7 @@
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.TextBox fullNameTextBox;
         private System.Windows.Forms.PictureBox personPictureBox;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox buttonsGroupBox;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button oKButton;
         private System.Windows.Forms.Button addPhotoButton;

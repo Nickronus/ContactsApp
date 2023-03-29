@@ -115,6 +115,7 @@
             this.editContactButton.Size = new System.Drawing.Size(83, 40);
             this.editContactButton.TabIndex = 11;
             this.editContactButton.UseVisualStyleBackColor = false;
+            this.editContactButton.Click += new System.EventHandler(this.editContactButton_Click);
             // 
             // addContactButton
             // 
@@ -130,6 +131,7 @@
             this.addContactButton.Size = new System.Drawing.Size(83, 40);
             this.addContactButton.TabIndex = 3;
             this.addContactButton.UseVisualStyleBackColor = false;
+            this.addContactButton.Click += new System.EventHandler(this.addContactButton_Click);
             // 
             // contactsListBox
             // 
@@ -267,6 +269,7 @@
             this.Controls.Add(this.MainSplitContainer);
             this.Name = "MainForm";
             this.Text = "ContactsApp";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.MainSplitContainer.Panel1.ResumeLayout(false);
             this.MainSplitContainer.Panel1.PerformLayout();
             this.MainSplitContainer.Panel2.ResumeLayout(false);

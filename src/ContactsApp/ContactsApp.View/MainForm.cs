@@ -15,6 +15,7 @@ namespace ContactsApp.View
         public MainForm()
         {
             InitializeComponent();
+            this.KeyPreview = true;
             addContactButton.FlatStyle = FlatStyle.Flat;
             addContactButton.FlatAppearance.BorderSize = 1;
             addContactButton.FlatAppearance.BorderColor = Color.White;
@@ -54,6 +55,27 @@ namespace ContactsApp.View
         private void VKLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addContactButton_Click(object sender, EventArgs e)
+        {
+            ContactForm contactForm = new ContactForm();
+            contactForm.ShowDialog();
+        }
+
+        private void editContactButton_Click(object sender, EventArgs e)
+        {
+            ContactForm contactForm = new ContactForm();
+            contactForm.ShowDialog();
+        }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                AboutForm aboutForm = new AboutForm();
+                aboutForm.ShowDialog();
+            }
         }
     }
 }
