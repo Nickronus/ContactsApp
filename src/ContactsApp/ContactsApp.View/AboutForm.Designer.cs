@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             this.contactsAppLabel = new System.Windows.Forms.Label();
             this.versionLabel = new System.Windows.Forms.Label();
             this.authorLabel = new System.Windows.Forms.Label();
@@ -35,9 +36,11 @@
             this.githubLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.mailLabel = new System.Windows.Forms.Label();
-            this.gitNameLabel = new System.Windows.Forms.Label();
             this.oKButton = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.infoRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.gitLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.usedImagesLabel = new System.Windows.Forms.Label();
+            this.usedImagesLinkLabel = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // contactsAppLabel
@@ -99,37 +102,56 @@
             // mailLabel
             // 
             this.mailLabel.AutoSize = true;
-            this.mailLabel.Location = new System.Drawing.Point(108, 101);
+            this.mailLabel.Location = new System.Drawing.Point(105, 101);
             this.mailLabel.Name = "mailLabel";
             this.mailLabel.Size = new System.Drawing.Size(94, 13);
             this.mailLabel.TabIndex = 8;
             this.mailLabel.Text = "nickronus@mail.ru";
             // 
-            // gitNameLabel
-            // 
-            this.gitNameLabel.AutoSize = true;
-            this.gitNameLabel.Location = new System.Drawing.Point(108, 126);
-            this.gitNameLabel.Name = "gitNameLabel";
-            this.gitNameLabel.Size = new System.Drawing.Size(55, 13);
-            this.gitNameLabel.TabIndex = 9;
-            this.gitNameLabel.Text = "Nickronus";
-            // 
             // oKButton
             // 
-            this.oKButton.Location = new System.Drawing.Point(440, 395);
+            this.oKButton.Location = new System.Drawing.Point(431, 395);
             this.oKButton.Name = "oKButton";
             this.oKButton.Size = new System.Drawing.Size(75, 23);
             this.oKButton.TabIndex = 10;
             this.oKButton.Text = "OK";
             this.oKButton.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // infoRichTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(21, 157);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(494, 208);
-            this.richTextBox1.TabIndex = 11;
-            this.richTextBox1.Text = "";
+            this.infoRichTextBox.Location = new System.Drawing.Point(12, 157);
+            this.infoRichTextBox.Name = "infoRichTextBox";
+            this.infoRichTextBox.Size = new System.Drawing.Size(494, 208);
+            this.infoRichTextBox.TabIndex = 11;
+            this.infoRichTextBox.Text = resources.GetString("infoRichTextBox.Text");
+            // 
+            // gitLinkLabel
+            // 
+            this.gitLinkLabel.AutoSize = true;
+            this.gitLinkLabel.Location = new System.Drawing.Point(105, 126);
+            this.gitLinkLabel.Name = "gitLinkLabel";
+            this.gitLinkLabel.Size = new System.Drawing.Size(148, 13);
+            this.gitLinkLabel.TabIndex = 12;
+            this.gitLinkLabel.TabStop = true;
+            this.gitLinkLabel.Text = "https://github.com/Nickronus";
+            // 
+            // usedImagesLabel
+            // 
+            this.usedImagesLabel.Location = new System.Drawing.Point(9, 368);
+            this.usedImagesLabel.Name = "usedImagesLabel";
+            this.usedImagesLabel.Size = new System.Drawing.Size(190, 18);
+            this.usedImagesLabel.TabIndex = 0;
+            this.usedImagesLabel.Text = "All used images are downloaded from";
+            // 
+            // usedImagesLinkLabel
+            // 
+            this.usedImagesLinkLabel.AutoSize = true;
+            this.usedImagesLinkLabel.Location = new System.Drawing.Point(189, 368);
+            this.usedImagesLinkLabel.Name = "usedImagesLinkLabel";
+            this.usedImagesLinkLabel.Size = new System.Drawing.Size(127, 13);
+            this.usedImagesLinkLabel.TabIndex = 13;
+            this.usedImagesLinkLabel.TabStop = true;
+            this.usedImagesLinkLabel.Text = "https://www.flaticon.com";
             // 
             // AboutForm
             // 
@@ -137,9 +159,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.usedImagesLinkLabel);
+            this.Controls.Add(this.usedImagesLabel);
+            this.Controls.Add(this.gitLinkLabel);
+            this.Controls.Add(this.infoRichTextBox);
             this.Controls.Add(this.oKButton);
-            this.Controls.Add(this.gitNameLabel);
             this.Controls.Add(this.mailLabel);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.githubLabel);
@@ -163,8 +187,10 @@
         private System.Windows.Forms.Label githubLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label mailLabel;
-        private System.Windows.Forms.Label gitNameLabel;
         private System.Windows.Forms.Button oKButton;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox infoRichTextBox;
+        private System.Windows.Forms.LinkLabel gitLinkLabel;
+        private System.Windows.Forms.Label usedImagesLabel;
+        private System.Windows.Forms.LinkLabel usedImagesLinkLabel;
     }
 }
