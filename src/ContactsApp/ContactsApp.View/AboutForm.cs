@@ -21,5 +21,10 @@ namespace ContactsApp.View
         {
 
         }
+
+        private void oKButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

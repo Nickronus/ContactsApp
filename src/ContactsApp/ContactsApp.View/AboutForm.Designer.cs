@@ -116,6 +116,7 @@
             this.oKButton.TabIndex = 10;
             this.oKButton.Text = "OK";
             this.oKButton.UseVisualStyleBackColor = true;
+            this.oKButton.Click += new System.EventHandler(this.oKButton_Click);
             // 
             // infoRichTextBox
             // 
