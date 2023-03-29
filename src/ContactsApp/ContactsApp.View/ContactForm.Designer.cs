@@ -203,6 +203,7 @@
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.fullNameTextBox);
             this.Controls.Add(this.personPictureBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ContactForm";
             this.Text = "ContactForm";
             this.Load += new System.EventHandler(this.ContactForm_Load);

@@ -171,6 +171,7 @@
             this.Controls.Add(this.authorLabel);
             this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.contactsAppLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AboutForm";
             this.Text = "AboutForm";
             this.ResumeLayout(false);
