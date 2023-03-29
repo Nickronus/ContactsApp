@@ -96,6 +96,7 @@
             this.removeContactButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("removeContactButton.BackgroundImage")));
             this.removeContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.removeContactButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.removeContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeContactButton.Location = new System.Drawing.Point(180, 410);
             this.removeContactButton.Name = "removeContactButton";
             this.removeContactButton.Size = new System.Drawing.Size(83, 40);
@@ -110,6 +111,7 @@
             this.editContactButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editContactButton.BackgroundImage")));
             this.editContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.editContactButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editContactButton.Location = new System.Drawing.Point(97, 410);
             this.editContactButton.Name = "editContactButton";
             this.editContactButton.Size = new System.Drawing.Size(83, 40);
@@ -125,6 +127,7 @@
             this.addContactButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addContactButton.BackgroundImage")));
             this.addContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.addContactButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addContactButton.ForeColor = System.Drawing.Color.White;
             this.addContactButton.Location = new System.Drawing.Point(14, 410);
             this.addContactButton.Name = "addContactButton";

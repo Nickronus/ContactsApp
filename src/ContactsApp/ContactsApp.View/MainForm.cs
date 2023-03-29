@@ -17,13 +17,13 @@ namespace ContactsApp.View
             InitializeComponent();
             this.KeyPreview = true;
             addContactButton.FlatStyle = FlatStyle.Flat;
-            addContactButton.FlatAppearance.BorderSize = 1;
+            addContactButton.FlatAppearance.BorderSize = 0;
             addContactButton.FlatAppearance.BorderColor = Color.White;
             editContactButton.FlatStyle = FlatStyle.Flat;
-            editContactButton.FlatAppearance.BorderSize = 1;
+            editContactButton.FlatAppearance.BorderSize = 0;
             editContactButton.FlatAppearance.BorderColor = Color.White;
             removeContactButton.FlatStyle = FlatStyle.Flat;
-            removeContactButton.FlatAppearance.BorderSize = 1;
+            removeContactButton.FlatAppearance.BorderSize = 0;
             removeContactButton.FlatAppearance.BorderColor = Color.White;
         }
 

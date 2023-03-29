@@ -178,6 +178,7 @@
             this.addPhotoButton.BackColor = System.Drawing.Color.White;
             this.addPhotoButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addPhotoButton.BackgroundImage")));
             this.addPhotoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.addPhotoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addPhotoButton.Location = new System.Drawing.Point(12, 118);
             this.addPhotoButton.Name = "addPhotoButton";
             this.addPhotoButton.Size = new System.Drawing.Size(100, 47);
@@ -205,7 +206,6 @@
             this.Controls.Add(this.personPictureBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ContactForm";
-            this.Text = "ContactForm";
             this.Load += new System.EventHandler(this.ContactForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).EndInit();
             this.buttonsGroupBox.ResumeLayout(false);
