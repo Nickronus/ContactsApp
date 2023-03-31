@@ -110,7 +110,7 @@
             // 
             // oKButton
             // 
-            this.oKButton.Location = new System.Drawing.Point(431, 395);
+            this.oKButton.Location = new System.Drawing.Point(437, 394);
             this.oKButton.Name = "oKButton";
             this.oKButton.Size = new System.Drawing.Size(75, 23);
             this.oKButton.TabIndex = 10;
@@ -122,9 +122,11 @@
             // 
             this.infoRichTextBox.Location = new System.Drawing.Point(12, 157);
             this.infoRichTextBox.Name = "infoRichTextBox";
-            this.infoRichTextBox.Size = new System.Drawing.Size(494, 208);
+            this.infoRichTextBox.ReadOnly = true;
+            this.infoRichTextBox.Size = new System.Drawing.Size(500, 208);
             this.infoRichTextBox.TabIndex = 11;
             this.infoRichTextBox.Text = resources.GetString("infoRichTextBox.Text");
+            this.infoRichTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.infoRichTextBox_KeyPress);
             // 
             // gitLinkLabel
             // 

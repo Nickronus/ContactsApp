@@ -111,7 +111,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.emailTextBox.Location = new System.Drawing.Point(118, 92);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(403, 20);
+            this.emailTextBox.Size = new System.Drawing.Size(394, 20);
             this.emailTextBox.TabIndex = 15;
             // 
             // emailLabel
@@ -129,7 +129,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fullNameTextBox.Location = new System.Drawing.Point(118, 31);
             this.fullNameTextBox.Name = "fullNameTextBox";
-            this.fullNameTextBox.Size = new System.Drawing.Size(403, 20);
+            this.fullNameTextBox.Size = new System.Drawing.Size(394, 20);
             this.fullNameTextBox.TabIndex = 13;
             // 
             // personPictureBox
@@ -176,14 +176,17 @@
             // addPhotoButton
             // 
             this.addPhotoButton.BackColor = System.Drawing.Color.White;
-            this.addPhotoButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addPhotoButton.BackgroundImage")));
-            this.addPhotoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.addPhotoButton.BackgroundImage = global::ContactsApp.View.Properties.Resources.add_photo_32x32_gray;
+            this.addPhotoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.addPhotoButton.FlatAppearance.BorderSize = 0;
             this.addPhotoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addPhotoButton.Location = new System.Drawing.Point(12, 118);
             this.addPhotoButton.Name = "addPhotoButton";
             this.addPhotoButton.Size = new System.Drawing.Size(100, 47);
             this.addPhotoButton.TabIndex = 23;
             this.addPhotoButton.UseVisualStyleBackColor = false;
+            this.addPhotoButton.MouseEnter += new System.EventHandler(this.addPhotoButton_MouseEnter);
+            this.addPhotoButton.MouseLeave += new System.EventHandler(this.addPhotoButton_MouseLeave);
             // 
             // ContactForm
             // 

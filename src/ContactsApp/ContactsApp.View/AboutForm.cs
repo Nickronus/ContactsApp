@@ -26,5 +26,10 @@ namespace ContactsApp.View
         {
             this.Close();
         }
+
+        private void infoRichTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

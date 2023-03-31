@@ -30,11 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.contactsListBox = new System.Windows.Forms.ListBox();
             this.removeContactButton = new System.Windows.Forms.Button();
-            this.editContactButton = new System.Windows.Forms.Button();
             this.addContactButton = new System.Windows.Forms.Button();
+            this.editContactButton = new System.Windows.Forms.Button();
             this.findTextBox = new System.Windows.Forms.TextBox();
             this.findLabel = new System.Windows.Forms.Label();
+            this.birthdayInfoPanel = new System.Windows.Forms.Panel();
+            this.cloeInfoButton = new System.Windows.Forms.Button();
+            this.birthdayNamesLabel = new System.Windows.Forms.Label();
+            this.birthdayLabel = new System.Windows.Forms.Label();
+            this.birthdayInfoPictureBox = new System.Windows.Forms.PictureBox();
             this.vKTextBox = new System.Windows.Forms.TextBox();
             this.vKLabel = new System.Windows.Forms.Label();
             this.dateOfBirthLabel = new System.Windows.Forms.Label();
@@ -46,19 +52,13 @@
             this.emailLabel = new System.Windows.Forms.Label();
             this.fullNameTextBox = new System.Windows.Forms.TextBox();
             this.personPictureBox = new System.Windows.Forms.PictureBox();
-            this.contactsListBox = new System.Windows.Forms.ListBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.birthdayLabel = new System.Windows.Forms.Label();
-            this.birthdayNamesLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
             this.MainSplitContainer.Panel1.SuspendLayout();
             this.MainSplitContainer.Panel2.SuspendLayout();
             this.MainSplitContainer.SuspendLayout();
+            this.birthdayInfoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.birthdayInfoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MainSplitContainer
@@ -80,7 +80,7 @@
             // 
             // MainSplitContainer.Panel2
             // 
-            this.MainSplitContainer.Panel2.Controls.Add(this.panel1);
+            this.MainSplitContainer.Panel2.Controls.Add(this.birthdayInfoPanel);
             this.MainSplitContainer.Panel2.Controls.Add(this.vKTextBox);
             this.MainSplitContainer.Panel2.Controls.Add(this.vKLabel);
             this.MainSplitContainer.Panel2.Controls.Add(this.dateOfBirthLabel);
@@ -98,13 +98,35 @@
             this.MainSplitContainer.SplitterDistance = 264;
             this.MainSplitContainer.TabIndex = 0;
             // 
+            // contactsListBox
+            // 
+            this.contactsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.contactsListBox.FormattingEnabled = true;
+            this.contactsListBox.Items.AddRange(new object[] {
+            "Авшарян Витя",
+            "Банников Саня",
+            "Бутылкина Алёна",
+            "Врач Вася",
+            "Дроздов Владимир",
+            "Зорин Петя",
+            "Любимая",
+            "Любовница",
+            "Макаров Макар",
+            "Яша"});
+            this.contactsListBox.Location = new System.Drawing.Point(3, 29);
+            this.contactsListBox.Name = "contactsListBox";
+            this.contactsListBox.Size = new System.Drawing.Size(258, 381);
+            this.contactsListBox.TabIndex = 13;
+            // 
             // removeContactButton
             // 
             this.removeContactButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.removeContactButton.BackColor = System.Drawing.Color.White;
             this.removeContactButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("removeContactButton.BackgroundImage")));
-            this.removeContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.removeContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.removeContactButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.removeContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeContactButton.Location = new System.Drawing.Point(175, 407);
@@ -112,22 +134,8 @@
             this.removeContactButton.Size = new System.Drawing.Size(86, 40);
             this.removeContactButton.TabIndex = 12;
             this.removeContactButton.UseVisualStyleBackColor = false;
-            // 
-            // editContactButton
-            // 
-            this.editContactButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.editContactButton.BackColor = System.Drawing.Color.White;
-            this.editContactButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editContactButton.BackgroundImage")));
-            this.editContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.editContactButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.editContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editContactButton.Location = new System.Drawing.Point(89, 407);
-            this.editContactButton.Name = "editContactButton";
-            this.editContactButton.Size = new System.Drawing.Size(86, 40);
-            this.editContactButton.TabIndex = 11;
-            this.editContactButton.UseVisualStyleBackColor = false;
-            this.editContactButton.Click += new System.EventHandler(this.editContactButton_Click);
+            this.removeContactButton.MouseEnter += new System.EventHandler(this.removeContactButton_MouseEnter);
+            this.removeContactButton.MouseLeave += new System.EventHandler(this.removeContactButton_MouseLeave);
             // 
             // addContactButton
             // 
@@ -135,7 +143,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.addContactButton.BackColor = System.Drawing.Color.White;
             this.addContactButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addContactButton.BackgroundImage")));
-            this.addContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.addContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.addContactButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addContactButton.ForeColor = System.Drawing.Color.White;
@@ -145,6 +153,26 @@
             this.addContactButton.TabIndex = 3;
             this.addContactButton.UseVisualStyleBackColor = false;
             this.addContactButton.Click += new System.EventHandler(this.addContactButton_Click);
+            this.addContactButton.MouseEnter += new System.EventHandler(this.addContactButton_MouseEnter);
+            this.addContactButton.MouseLeave += new System.EventHandler(this.addContactButton_MouseLeave);
+            // 
+            // editContactButton
+            // 
+            this.editContactButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.editContactButton.BackColor = System.Drawing.Color.White;
+            this.editContactButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editContactButton.BackgroundImage")));
+            this.editContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.editContactButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editContactButton.Location = new System.Drawing.Point(89, 407);
+            this.editContactButton.Name = "editContactButton";
+            this.editContactButton.Size = new System.Drawing.Size(86, 40);
+            this.editContactButton.TabIndex = 11;
+            this.editContactButton.UseVisualStyleBackColor = false;
+            this.editContactButton.Click += new System.EventHandler(this.editContactButton_Click);
+            this.editContactButton.MouseEnter += new System.EventHandler(this.editContactButton_MouseEnter);
+            this.editContactButton.MouseLeave += new System.EventHandler(this.editContactButton_MouseLeave);
             // 
             // findTextBox
             // 
@@ -165,12 +193,76 @@
             this.findLabel.Text = "Find:";
             this.findLabel.Click += new System.EventHandler(this.label1_Click);
             // 
+            // birthdayInfoPanel
+            // 
+            this.birthdayInfoPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.birthdayInfoPanel.BackColor = System.Drawing.Color.Azure;
+            this.birthdayInfoPanel.Controls.Add(this.cloeInfoButton);
+            this.birthdayInfoPanel.Controls.Add(this.birthdayNamesLabel);
+            this.birthdayInfoPanel.Controls.Add(this.birthdayLabel);
+            this.birthdayInfoPanel.Controls.Add(this.birthdayInfoPictureBox);
+            this.birthdayInfoPanel.Location = new System.Drawing.Point(3, 367);
+            this.birthdayInfoPanel.Name = "birthdayInfoPanel";
+            this.birthdayInfoPanel.Size = new System.Drawing.Size(525, 80);
+            this.birthdayInfoPanel.TabIndex = 11;
+            // 
+            // cloeInfoButton
+            // 
+            this.cloeInfoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cloeInfoButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cloeInfoButton.BackgroundImage")));
+            this.cloeInfoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cloeInfoButton.FlatAppearance.BorderSize = 0;
+            this.cloeInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cloeInfoButton.Location = new System.Drawing.Point(475, 6);
+            this.cloeInfoButton.Name = "cloeInfoButton";
+            this.cloeInfoButton.Size = new System.Drawing.Size(42, 37);
+            this.cloeInfoButton.TabIndex = 3;
+            this.cloeInfoButton.UseVisualStyleBackColor = true;
+            this.cloeInfoButton.Click += new System.EventHandler(this.cloeInfoButton_Click);
+            // 
+            // birthdayNamesLabel
+            // 
+            this.birthdayNamesLabel.AutoSize = true;
+            this.birthdayNamesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.birthdayNamesLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.birthdayNamesLabel.Location = new System.Drawing.Point(86, 40);
+            this.birthdayNamesLabel.Name = "birthdayNamesLabel";
+            this.birthdayNamesLabel.Size = new System.Drawing.Size(291, 13);
+            this.birthdayNamesLabel.TabIndex = 2;
+            this.birthdayNamesLabel.Text = "Афоня Иванов, Альфред Зюзьков, Карл Лысый";
+            // 
+            // birthdayLabel
+            // 
+            this.birthdayLabel.AutoSize = true;
+            this.birthdayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.birthdayLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.birthdayLabel.Location = new System.Drawing.Point(86, 16);
+            this.birthdayLabel.Name = "birthdayLabel";
+            this.birthdayLabel.Size = new System.Drawing.Size(124, 13);
+            this.birthdayLabel.TabIndex = 1;
+            this.birthdayLabel.Text = "Today is Birthday of:";
+            // 
+            // birthdayInfoPictureBox
+            // 
+            this.birthdayInfoPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("birthdayInfoPictureBox.BackgroundImage")));
+            this.birthdayInfoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.birthdayInfoPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("birthdayInfoPictureBox.InitialImage")));
+            this.birthdayInfoPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.birthdayInfoPictureBox.Name = "birthdayInfoPictureBox";
+            this.birthdayInfoPictureBox.Size = new System.Drawing.Size(80, 80);
+            this.birthdayInfoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.birthdayInfoPictureBox.TabIndex = 0;
+            this.birthdayInfoPictureBox.TabStop = false;
+            this.birthdayInfoPictureBox.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            // 
             // vKTextBox
             // 
             this.vKTextBox.Location = new System.Drawing.Point(109, 273);
             this.vKTextBox.Name = "vKTextBox";
             this.vKTextBox.Size = new System.Drawing.Size(204, 20);
             this.vKTextBox.TabIndex = 10;
+            this.vKTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vKTextBox_KeyPress);
             // 
             // vKLabel
             // 
@@ -197,6 +289,7 @@
             this.dateOfBirthTextBox.Name = "dateOfBirthTextBox";
             this.dateOfBirthTextBox.Size = new System.Drawing.Size(204, 20);
             this.dateOfBirthTextBox.TabIndex = 7;
+            this.dateOfBirthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateOfBirthTextBox_KeyPress);
             // 
             // phoneNumberTextBox
             // 
@@ -204,6 +297,8 @@
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(204, 20);
             this.phoneNumberTextBox.TabIndex = 6;
+            this.phoneNumberTextBox.Text = "8-900-123-17-71";
+            this.phoneNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneNumberTextBox_KeyPress);
             // 
             // phoneNumberLabel
             // 
@@ -231,6 +326,8 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(419, 20);
             this.emailTextBox.TabIndex = 4;
+            this.emailTextBox.Text = "vova@pinguin.ru";
+            this.emailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.emailTextBox_KeyPress);
             // 
             // emailLabel
             // 
@@ -249,7 +346,9 @@
             this.fullNameTextBox.Name = "fullNameTextBox";
             this.fullNameTextBox.Size = new System.Drawing.Size(419, 20);
             this.fullNameTextBox.TabIndex = 2;
+            this.fullNameTextBox.Text = "Дядя Вова";
             this.fullNameTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.fullNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fullNameTextBox_KeyPress);
             // 
             // personPictureBox
             // 
@@ -261,69 +360,6 @@
             this.personPictureBox.TabIndex = 0;
             this.personPictureBox.TabStop = false;
             this.personPictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // contactsListBox
-            // 
-            this.contactsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.contactsListBox.FormattingEnabled = true;
-            this.contactsListBox.Location = new System.Drawing.Point(3, 29);
-            this.contactsListBox.Name = "contactsListBox";
-            this.contactsListBox.Size = new System.Drawing.Size(258, 381);
-            this.contactsListBox.TabIndex = 13;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Azure;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.birthdayNamesLabel);
-            this.panel1.Controls.Add(this.birthdayLabel);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(3, 367);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(525, 80);
-            this.panel1.TabIndex = 11;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
-            // 
-            // birthdayLabel
-            // 
-            this.birthdayLabel.AutoSize = true;
-            this.birthdayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.birthdayLabel.Location = new System.Drawing.Point(86, 16);
-            this.birthdayLabel.Name = "birthdayLabel";
-            this.birthdayLabel.Size = new System.Drawing.Size(124, 13);
-            this.birthdayLabel.TabIndex = 1;
-            this.birthdayLabel.Text = "Today is Birthday of:";
-            // 
-            // birthdayNamesLabel
-            // 
-            this.birthdayNamesLabel.AutoSize = true;
-            this.birthdayNamesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.birthdayNamesLabel.Location = new System.Drawing.Point(86, 40);
-            this.birthdayNamesLabel.Name = "birthdayNamesLabel";
-            this.birthdayNamesLabel.Size = new System.Drawing.Size(291, 13);
-            this.birthdayNamesLabel.TabIndex = 2;
-            this.birthdayNamesLabel.Text = "Афоня Иванов, Альфред Зюзьков, Карл Лысый";
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(442, 30);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "1:40";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -342,10 +378,10 @@
             this.MainSplitContainer.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).EndInit();
             this.MainSplitContainer.ResumeLayout(false);
+            this.birthdayInfoPanel.ResumeLayout(false);
+            this.birthdayInfoPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.birthdayInfoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -370,11 +406,11 @@
         private System.Windows.Forms.Button editContactButton;
         private System.Windows.Forms.Button addContactButton;
         private System.Windows.Forms.ListBox contactsListBox;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel birthdayInfoPanel;
+        private System.Windows.Forms.PictureBox birthdayInfoPictureBox;
         private System.Windows.Forms.Label birthdayLabel;
         private System.Windows.Forms.Label birthdayNamesLabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cloeInfoButton;
     }
 }
 

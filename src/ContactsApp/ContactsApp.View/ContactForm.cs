@@ -34,5 +34,17 @@ namespace ContactsApp.View
         {
             this.Close();
         }
+
+        private void addPhotoButton_MouseEnter(object sender, EventArgs e)
+        {
+            this.addPhotoButton.Image = Properties.Resources.add_photo_32x32;
+            this.addPhotoButton.BackColor = ColorTranslator.FromHtml("#F5F5FF");
+        }
+
+        private void addPhotoButton_MouseLeave(object sender, EventArgs e)
+        {
+            this.addPhotoButton.Image = Properties.Resources.add_photo_32x32_gray;
+            this.addPhotoButton.BackColor = Color.White;
+        }
     }
 }

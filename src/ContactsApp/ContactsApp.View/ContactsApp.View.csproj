@@ -86,6 +86,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -103,6 +104,33 @@
   <ItemGroup>
     <Content Include="3772183.ico" />
     <Content Include="3772240.ico" />
+    <None Include="Resources\remove_contact_32x32_gray.png" />
+    <None Include="Resources\remove_contact_32x32.png" />
+    <None Include="Resources\photo_placeholder_100x100.png" />
+    <None Include="Resources\info_48x48.png" />
+    <None Include="Resources\edit_contact_32x32_gray.png" />
+    <None Include="Resources\edit_contact_32x32.png" />
+    <None Include="Resources\collapse_32x32.png" />
+    <None Include="Resources\close_32x32.png" />
+    <None Include="Resources\add_photo_32x32_gray.png" />
+    <None Include="Resources\add_photo_32x32.png" />
+    <None Include="Resources\add_contact_32x32_gray.png" />
+    <None Include="Resources\add_contact_32x32.png" />
+    <None Include="Resources\normal_edit_color.png" />
+    <None Include="Resources\normal_delete_color.png" />
+    <None Include="Resources\normal_add_color.png" />
+    <None Include="Resources\3893884.png" />
+    <None Include="Resources\3893874.png" />
+    <None Include="Resources\3893833.png" />
+    <None Include="Resources\5807924.png" />
+    <None Include="Resources\3893890.png" />
+    <None Include="Resources\3893883.png" />
+    <None Include="Resources\3893843.png" />
+    <None Include="Resources\icons8-редактировать-мужчину-пользователя-96.png" />
+    <None Include="Resources\icons8-удалить-пользователя-96.png" />
+    <None Include="Resources\icons8-добавить-пользователя-96.png" />
+    <None Include="Resources\add_contact_gray.ico" />
+    <None Include="Resources\3772240.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
