@@ -41,6 +41,8 @@
             this.gitLinkLabel = new System.Windows.Forms.LinkLabel();
             this.usedImagesLabel = new System.Windows.Forms.Label();
             this.usedImagesLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // contactsAppLabel
@@ -109,7 +111,7 @@
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(437, 394);
+            this.okButton.Location = new System.Drawing.Point(437, 15);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 10;
@@ -157,17 +159,27 @@
             this.usedImagesLinkLabel.Text = "https://www.flaticon.com";
             this.usedImagesLinkLabel.Click += new System.EventHandler(this.usedImagesLinkLabel_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.okButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 401);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(524, 50);
+            this.panel1.TabIndex = 14;
+            // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(524, 451);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.usedImagesLinkLabel);
             this.Controls.Add(this.usedImagesLabel);
             this.Controls.Add(this.gitLinkLabel);
             this.Controls.Add(this.infoRichTextBox);
-            this.Controls.Add(this.okButton);
             this.Controls.Add(this.mailLabel);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.githubLabel);
@@ -175,8 +187,12 @@
             this.Controls.Add(this.authorLabel);
             this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.contactsAppLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "AboutForm";
+            this.ShowIcon = false;
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,5 +212,6 @@
         private System.Windows.Forms.LinkLabel gitLinkLabel;
         private System.Windows.Forms.Label usedImagesLabel;
         private System.Windows.Forms.LinkLabel usedImagesLinkLabel;
+        private System.Windows.Forms.Panel panel1;
     }
 }

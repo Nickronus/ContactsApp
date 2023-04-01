@@ -138,10 +138,10 @@
             // addPhotoButton
             // 
             this.addPhotoButton.BackColor = System.Drawing.Color.White;
-            this.addPhotoButton.BackgroundImage = global::ContactsApp.View.Properties.Resources.add_photo_32x32_gray;
             this.addPhotoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.addPhotoButton.FlatAppearance.BorderSize = 0;
             this.addPhotoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addPhotoButton.Image = global::ContactsApp.View.Properties.Resources.add_photo_32x32_gray;
             this.addPhotoButton.Location = new System.Drawing.Point(12, 118);
             this.addPhotoButton.Name = "addPhotoButton";
             this.addPhotoButton.Size = new System.Drawing.Size(100, 47);
@@ -152,7 +152,7 @@
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(346, 21);
+            this.okButton.Location = new System.Drawing.Point(356, 15);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 0;
@@ -162,7 +162,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(427, 21);
+            this.cancelButton.Location = new System.Drawing.Point(437, 15);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 1;
@@ -175,9 +175,10 @@
             this.okPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.okPanel.Controls.Add(this.okButton);
             this.okPanel.Controls.Add(this.cancelButton);
-            this.okPanel.Location = new System.Drawing.Point(-3, 321);
+            this.okPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.okPanel.Location = new System.Drawing.Point(0, 327);
             this.okPanel.Name = "okPanel";
-            this.okPanel.Size = new System.Drawing.Size(529, 60);
+            this.okPanel.Size = new System.Drawing.Size(524, 50);
             this.okPanel.TabIndex = 24;
             // 
             // dateOfBirthTimePicker
