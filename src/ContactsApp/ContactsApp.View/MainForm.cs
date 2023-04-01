@@ -18,36 +18,6 @@ namespace ContactsApp.View
             this.KeyPreview = true;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainSplitContainer_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void EmailLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void VKLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void addContactButton_Click(object sender, EventArgs e)
         {
             ContactForm contactForm = new ContactForm();
@@ -67,11 +37,6 @@ namespace ContactsApp.View
                 AboutForm aboutForm = new AboutForm();
                 aboutForm.ShowDialog();
             }
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void closeInfoButton_Click(object sender, EventArgs e)
@@ -141,11 +106,6 @@ namespace ContactsApp.View
         private void vKTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -20,11 +20,6 @@ namespace ContactsApp.View
             addPhotoButton.FlatAppearance.BorderColor = Color.White;
         }
 
-        private void ContactForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void oKButton_Click(object sender, EventArgs e)
         {
             this.Close();

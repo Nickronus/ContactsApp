@@ -93,13 +93,14 @@
             this.MainSplitContainer.Panel2.Controls.Add(this.fullNameTextBox);
             this.MainSplitContainer.Panel2.Controls.Add(this.personPictureBox);
             this.MainSplitContainer.Panel2.Margin = new System.Windows.Forms.Padding(3);
-            this.MainSplitContainer.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.MainSplitContainer_Panel2_Paint);
             this.MainSplitContainer.Size = new System.Drawing.Size(800, 450);
             this.MainSplitContainer.SplitterDistance = 264;
             this.MainSplitContainer.TabIndex = 0;
             // 
             // buttonsTableLayoutPanel
             // 
+            this.buttonsTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonsTableLayoutPanel.ColumnCount = 3;
             this.buttonsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.buttonsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -188,7 +189,6 @@
             "Макаров Макар",
             "Яша Иванов"});
             this.contactsListBox.Location = new System.Drawing.Point(3, 29);
-            this.contactsListBox.Margin = new System.Windows.Forms.Padding(0);
             this.contactsListBox.Name = "contactsListBox";
             this.contactsListBox.Size = new System.Drawing.Size(258, 378);
             this.contactsListBox.TabIndex = 13;
@@ -210,7 +210,6 @@
             this.findLabel.Size = new System.Drawing.Size(30, 13);
             this.findLabel.TabIndex = 0;
             this.findLabel.Text = "Find:";
-            this.findLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // birthdayInfoPanel
             // 
@@ -273,7 +272,6 @@
             this.birthdayInfoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.birthdayInfoPictureBox.TabIndex = 0;
             this.birthdayInfoPictureBox.TabStop = false;
-            this.birthdayInfoPictureBox.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // vkTextBox
             // 
@@ -291,7 +289,6 @@
             this.vkLabel.Size = new System.Drawing.Size(24, 13);
             this.vkLabel.TabIndex = 9;
             this.vkLabel.Text = "VK:";
-            this.vkLabel.Click += new System.EventHandler(this.VKLabel_Click);
             // 
             // dateOfBirthLabel
             // 
@@ -366,7 +363,6 @@
             this.fullNameTextBox.Size = new System.Drawing.Size(419, 20);
             this.fullNameTextBox.TabIndex = 2;
             this.fullNameTextBox.Text = "Дядя Вова";
-            this.fullNameTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.fullNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fullNameTextBox_KeyPress);
             // 
             // personPictureBox
@@ -378,7 +374,6 @@
             this.personPictureBox.Size = new System.Drawing.Size(100, 100);
             this.personPictureBox.TabIndex = 0;
             this.personPictureBox.TabStop = false;
-            this.personPictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // MainForm
             // 
@@ -390,7 +385,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "ContactsApp";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.MainSplitContainer.Panel1.ResumeLayout(false);
             this.MainSplitContainer.Panel1.PerformLayout();

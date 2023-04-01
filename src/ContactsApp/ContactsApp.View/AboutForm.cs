@@ -17,11 +17,6 @@ namespace ContactsApp.View
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void oKButton_Click(object sender, EventArgs e)
         {
             this.Close();

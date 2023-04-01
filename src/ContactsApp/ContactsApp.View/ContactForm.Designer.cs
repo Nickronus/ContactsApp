@@ -210,7 +210,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ContactForm";
             this.ShowIcon = false;
-            this.Load += new System.EventHandler(this.ContactForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).EndInit();
             this.okPanel.ResumeLayout(false);
             this.ResumeLayout(false);

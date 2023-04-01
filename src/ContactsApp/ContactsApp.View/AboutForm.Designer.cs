@@ -52,7 +52,6 @@
             this.contactsAppLabel.Size = new System.Drawing.Size(146, 25);
             this.contactsAppLabel.TabIndex = 0;
             this.contactsAppLabel.Text = "ContactsApp";
-            this.contactsAppLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // versionLabel
             // 
