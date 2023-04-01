@@ -16,15 +16,6 @@ namespace ContactsApp.View
         {
             InitializeComponent();
             this.KeyPreview = true;
-            addContactButton.FlatStyle = FlatStyle.Flat;
-            addContactButton.FlatAppearance.BorderSize = 0;
-            addContactButton.FlatAppearance.BorderColor = Color.White;
-            editContactButton.FlatStyle = FlatStyle.Flat;
-            editContactButton.FlatAppearance.BorderSize = 0;
-            editContactButton.FlatAppearance.BorderColor = Color.White;
-            removeContactButton.FlatStyle = FlatStyle.Flat;
-            removeContactButton.FlatAppearance.BorderSize = 0;
-            removeContactButton.FlatAppearance.BorderColor = Color.White;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -83,7 +74,7 @@ namespace ContactsApp.View
 
         }
 
-        private void cloeInfoButton_Click(object sender, EventArgs e)
+        private void closeInfoButton_Click(object sender, EventArgs e)
         {
             this.birthdayInfoPanel.Visible = false;
             this.birthdayInfoPictureBox.Visible = false;
@@ -150,6 +141,11 @@ namespace ContactsApp.View
         private void vKTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

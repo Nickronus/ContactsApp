@@ -30,19 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.contactsListBox = new System.Windows.Forms.ListBox();
+            this.buttonsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.removeContactButton = new System.Windows.Forms.Button();
-            this.addContactButton = new System.Windows.Forms.Button();
             this.editContactButton = new System.Windows.Forms.Button();
+            this.addContactButton = new System.Windows.Forms.Button();
+            this.contactsListBox = new System.Windows.Forms.ListBox();
             this.findTextBox = new System.Windows.Forms.TextBox();
             this.findLabel = new System.Windows.Forms.Label();
             this.birthdayInfoPanel = new System.Windows.Forms.Panel();
-            this.cloeInfoButton = new System.Windows.Forms.Button();
+            this.closeInfoButton = new System.Windows.Forms.Button();
             this.birthdayNamesLabel = new System.Windows.Forms.Label();
             this.birthdayLabel = new System.Windows.Forms.Label();
             this.birthdayInfoPictureBox = new System.Windows.Forms.PictureBox();
-            this.vKTextBox = new System.Windows.Forms.TextBox();
-            this.vKLabel = new System.Windows.Forms.Label();
+            this.vkTextBox = new System.Windows.Forms.TextBox();
+            this.vkLabel = new System.Windows.Forms.Label();
             this.dateOfBirthLabel = new System.Windows.Forms.Label();
             this.dateOfBirthTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
@@ -56,6 +57,7 @@
             this.MainSplitContainer.Panel1.SuspendLayout();
             this.MainSplitContainer.Panel2.SuspendLayout();
             this.MainSplitContainer.SuspendLayout();
+            this.buttonsTableLayoutPanel.SuspendLayout();
             this.birthdayInfoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.birthdayInfoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).BeginInit();
@@ -70,10 +72,8 @@
             // 
             // MainSplitContainer.Panel1
             // 
+            this.MainSplitContainer.Panel1.Controls.Add(this.buttonsTableLayoutPanel);
             this.MainSplitContainer.Panel1.Controls.Add(this.contactsListBox);
-            this.MainSplitContainer.Panel1.Controls.Add(this.removeContactButton);
-            this.MainSplitContainer.Panel1.Controls.Add(this.addContactButton);
-            this.MainSplitContainer.Panel1.Controls.Add(this.editContactButton);
             this.MainSplitContainer.Panel1.Controls.Add(this.findTextBox);
             this.MainSplitContainer.Panel1.Controls.Add(this.findLabel);
             this.MainSplitContainer.Panel1.Margin = new System.Windows.Forms.Padding(3);
@@ -81,8 +81,8 @@
             // MainSplitContainer.Panel2
             // 
             this.MainSplitContainer.Panel2.Controls.Add(this.birthdayInfoPanel);
-            this.MainSplitContainer.Panel2.Controls.Add(this.vKTextBox);
-            this.MainSplitContainer.Panel2.Controls.Add(this.vKLabel);
+            this.MainSplitContainer.Panel2.Controls.Add(this.vkTextBox);
+            this.MainSplitContainer.Panel2.Controls.Add(this.vkLabel);
             this.MainSplitContainer.Panel2.Controls.Add(this.dateOfBirthLabel);
             this.MainSplitContainer.Panel2.Controls.Add(this.dateOfBirthTextBox);
             this.MainSplitContainer.Panel2.Controls.Add(this.phoneNumberTextBox);
@@ -98,81 +98,100 @@
             this.MainSplitContainer.SplitterDistance = 264;
             this.MainSplitContainer.TabIndex = 0;
             // 
-            // contactsListBox
+            // buttonsTableLayoutPanel
             // 
-            this.contactsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.contactsListBox.FormattingEnabled = true;
-            this.contactsListBox.Items.AddRange(new object[] {
-            "Авшарян Витя",
-            "Банников Саня",
-            "Бутылкина Алёна",
-            "Врач Вася",
-            "Дроздов Владимир",
-            "Зорин Петя",
-            "Любимая",
-            "Любовница",
-            "Макаров Макар",
-            "Яша"});
-            this.contactsListBox.Location = new System.Drawing.Point(3, 29);
-            this.contactsListBox.Name = "contactsListBox";
-            this.contactsListBox.Size = new System.Drawing.Size(258, 381);
-            this.contactsListBox.TabIndex = 13;
+            this.buttonsTableLayoutPanel.ColumnCount = 3;
+            this.buttonsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.buttonsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.buttonsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.buttonsTableLayoutPanel.Controls.Add(this.removeContactButton, 2, 0);
+            this.buttonsTableLayoutPanel.Controls.Add(this.editContactButton, 1, 0);
+            this.buttonsTableLayoutPanel.Controls.Add(this.addContactButton, 0, 0);
+            this.buttonsTableLayoutPanel.Location = new System.Drawing.Point(4, 407);
+            this.buttonsTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonsTableLayoutPanel.Name = "buttonsTableLayoutPanel";
+            this.buttonsTableLayoutPanel.RowCount = 1;
+            this.buttonsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.buttonsTableLayoutPanel.Size = new System.Drawing.Size(257, 40);
+            this.buttonsTableLayoutPanel.TabIndex = 14;
             // 
             // removeContactButton
             // 
-            this.removeContactButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.removeContactButton.BackColor = System.Drawing.Color.White;
-            this.removeContactButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("removeContactButton.BackgroundImage")));
             this.removeContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.removeContactButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.removeContactButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.removeContactButton.FlatAppearance.BorderSize = 0;
             this.removeContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.removeContactButton.Location = new System.Drawing.Point(175, 407);
+            this.removeContactButton.Image = global::ContactsApp.View.Properties.Resources.remove_contact_32x32_gray;
+            this.removeContactButton.Location = new System.Drawing.Point(170, 0);
+            this.removeContactButton.Margin = new System.Windows.Forms.Padding(0);
             this.removeContactButton.Name = "removeContactButton";
-            this.removeContactButton.Size = new System.Drawing.Size(86, 40);
+            this.removeContactButton.Size = new System.Drawing.Size(87, 40);
             this.removeContactButton.TabIndex = 12;
             this.removeContactButton.UseVisualStyleBackColor = false;
             this.removeContactButton.MouseEnter += new System.EventHandler(this.removeContactButton_MouseEnter);
             this.removeContactButton.MouseLeave += new System.EventHandler(this.removeContactButton_MouseLeave);
             // 
+            // editContactButton
+            // 
+            this.editContactButton.BackColor = System.Drawing.Color.White;
+            this.editContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.editContactButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editContactButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editContactButton.FlatAppearance.BorderSize = 0;
+            this.editContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editContactButton.Image = global::ContactsApp.View.Properties.Resources.edit_contact_32x32_gray;
+            this.editContactButton.Location = new System.Drawing.Point(85, 0);
+            this.editContactButton.Margin = new System.Windows.Forms.Padding(0);
+            this.editContactButton.Name = "editContactButton";
+            this.editContactButton.Size = new System.Drawing.Size(85, 40);
+            this.editContactButton.TabIndex = 11;
+            this.editContactButton.UseVisualStyleBackColor = false;
+            this.editContactButton.Click += new System.EventHandler(this.editContactButton_Click);
+            this.editContactButton.MouseEnter += new System.EventHandler(this.editContactButton_MouseEnter);
+            this.editContactButton.MouseLeave += new System.EventHandler(this.editContactButton_MouseLeave);
+            // 
             // addContactButton
             // 
-            this.addContactButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.addContactButton.BackColor = System.Drawing.Color.White;
-            this.addContactButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addContactButton.BackgroundImage")));
             this.addContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.addContactButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addContactButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.addContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addContactButton.ForeColor = System.Drawing.Color.White;
-            this.addContactButton.Location = new System.Drawing.Point(3, 407);
+            this.addContactButton.Image = global::ContactsApp.View.Properties.Resources.add_contact_32x32_gray;
+            this.addContactButton.Location = new System.Drawing.Point(0, 0);
+            this.addContactButton.Margin = new System.Windows.Forms.Padding(0);
             this.addContactButton.Name = "addContactButton";
-            this.addContactButton.Size = new System.Drawing.Size(86, 40);
+            this.addContactButton.Size = new System.Drawing.Size(85, 40);
             this.addContactButton.TabIndex = 3;
             this.addContactButton.UseVisualStyleBackColor = false;
             this.addContactButton.Click += new System.EventHandler(this.addContactButton_Click);
             this.addContactButton.MouseEnter += new System.EventHandler(this.addContactButton_MouseEnter);
             this.addContactButton.MouseLeave += new System.EventHandler(this.addContactButton_MouseLeave);
             // 
-            // editContactButton
+            // contactsListBox
             // 
-            this.editContactButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.contactsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.editContactButton.BackColor = System.Drawing.Color.White;
-            this.editContactButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editContactButton.BackgroundImage")));
-            this.editContactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.editContactButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.editContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editContactButton.Location = new System.Drawing.Point(89, 407);
-            this.editContactButton.Name = "editContactButton";
-            this.editContactButton.Size = new System.Drawing.Size(86, 40);
-            this.editContactButton.TabIndex = 11;
-            this.editContactButton.UseVisualStyleBackColor = false;
-            this.editContactButton.Click += new System.EventHandler(this.editContactButton_Click);
-            this.editContactButton.MouseEnter += new System.EventHandler(this.editContactButton_MouseEnter);
-            this.editContactButton.MouseLeave += new System.EventHandler(this.editContactButton_MouseLeave);
+            this.contactsListBox.FormattingEnabled = true;
+            this.contactsListBox.IntegralHeight = false;
+            this.contactsListBox.Items.AddRange(new object[] {
+            "Авшарян Витя",
+            "Банников Саня",
+            "Бутылкина Алёна",
+            "Врач Василий",
+            "Дроздов Владимир",
+            "Зорин Петя",
+            "Макаров Макар",
+            "Яша Иванов"});
+            this.contactsListBox.Location = new System.Drawing.Point(3, 29);
+            this.contactsListBox.Margin = new System.Windows.Forms.Padding(0);
+            this.contactsListBox.Name = "contactsListBox";
+            this.contactsListBox.Size = new System.Drawing.Size(258, 378);
+            this.contactsListBox.TabIndex = 13;
             // 
             // findTextBox
             // 
@@ -198,7 +217,7 @@
             this.birthdayInfoPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.birthdayInfoPanel.BackColor = System.Drawing.Color.Azure;
-            this.birthdayInfoPanel.Controls.Add(this.cloeInfoButton);
+            this.birthdayInfoPanel.Controls.Add(this.closeInfoButton);
             this.birthdayInfoPanel.Controls.Add(this.birthdayNamesLabel);
             this.birthdayInfoPanel.Controls.Add(this.birthdayLabel);
             this.birthdayInfoPanel.Controls.Add(this.birthdayInfoPictureBox);
@@ -207,19 +226,19 @@
             this.birthdayInfoPanel.Size = new System.Drawing.Size(525, 80);
             this.birthdayInfoPanel.TabIndex = 11;
             // 
-            // cloeInfoButton
+            // closeInfoButton
             // 
-            this.cloeInfoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cloeInfoButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cloeInfoButton.BackgroundImage")));
-            this.cloeInfoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cloeInfoButton.FlatAppearance.BorderSize = 0;
-            this.cloeInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cloeInfoButton.Location = new System.Drawing.Point(475, 6);
-            this.cloeInfoButton.Name = "cloeInfoButton";
-            this.cloeInfoButton.Size = new System.Drawing.Size(42, 37);
-            this.cloeInfoButton.TabIndex = 3;
-            this.cloeInfoButton.UseVisualStyleBackColor = true;
-            this.cloeInfoButton.Click += new System.EventHandler(this.cloeInfoButton_Click);
+            this.closeInfoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeInfoButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("closeInfoButton.BackgroundImage")));
+            this.closeInfoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.closeInfoButton.FlatAppearance.BorderSize = 0;
+            this.closeInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeInfoButton.Location = new System.Drawing.Point(475, 6);
+            this.closeInfoButton.Name = "closeInfoButton";
+            this.closeInfoButton.Size = new System.Drawing.Size(42, 37);
+            this.closeInfoButton.TabIndex = 3;
+            this.closeInfoButton.UseVisualStyleBackColor = true;
+            this.closeInfoButton.Click += new System.EventHandler(this.closeInfoButton_Click);
             // 
             // birthdayNamesLabel
             // 
@@ -248,31 +267,31 @@
             this.birthdayInfoPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("birthdayInfoPictureBox.BackgroundImage")));
             this.birthdayInfoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.birthdayInfoPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("birthdayInfoPictureBox.InitialImage")));
-            this.birthdayInfoPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.birthdayInfoPictureBox.Location = new System.Drawing.Point(3, 3);
             this.birthdayInfoPictureBox.Name = "birthdayInfoPictureBox";
-            this.birthdayInfoPictureBox.Size = new System.Drawing.Size(80, 80);
+            this.birthdayInfoPictureBox.Size = new System.Drawing.Size(76, 76);
             this.birthdayInfoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.birthdayInfoPictureBox.TabIndex = 0;
             this.birthdayInfoPictureBox.TabStop = false;
             this.birthdayInfoPictureBox.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
-            // vKTextBox
+            // vkTextBox
             // 
-            this.vKTextBox.Location = new System.Drawing.Point(109, 273);
-            this.vKTextBox.Name = "vKTextBox";
-            this.vKTextBox.Size = new System.Drawing.Size(204, 20);
-            this.vKTextBox.TabIndex = 10;
-            this.vKTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vKTextBox_KeyPress);
+            this.vkTextBox.Location = new System.Drawing.Point(109, 273);
+            this.vkTextBox.Name = "vkTextBox";
+            this.vkTextBox.Size = new System.Drawing.Size(204, 20);
+            this.vkTextBox.TabIndex = 10;
+            this.vkTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vKTextBox_KeyPress);
             // 
-            // vKLabel
+            // vkLabel
             // 
-            this.vKLabel.AutoSize = true;
-            this.vKLabel.Location = new System.Drawing.Point(109, 257);
-            this.vKLabel.Name = "vKLabel";
-            this.vKLabel.Size = new System.Drawing.Size(24, 13);
-            this.vKLabel.TabIndex = 9;
-            this.vKLabel.Text = "VK:";
-            this.vKLabel.Click += new System.EventHandler(this.VKLabel_Click);
+            this.vkLabel.AutoSize = true;
+            this.vkLabel.Location = new System.Drawing.Point(109, 257);
+            this.vkLabel.Name = "vkLabel";
+            this.vkLabel.Size = new System.Drawing.Size(24, 13);
+            this.vkLabel.TabIndex = 9;
+            this.vkLabel.Text = "VK:";
+            this.vkLabel.Click += new System.EventHandler(this.VKLabel_Click);
             // 
             // dateOfBirthLabel
             // 
@@ -371,6 +390,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "ContactsApp";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.MainSplitContainer.Panel1.ResumeLayout(false);
             this.MainSplitContainer.Panel1.PerformLayout();
@@ -378,6 +398,7 @@
             this.MainSplitContainer.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).EndInit();
             this.MainSplitContainer.ResumeLayout(false);
+            this.buttonsTableLayoutPanel.ResumeLayout(false);
             this.birthdayInfoPanel.ResumeLayout(false);
             this.birthdayInfoPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.birthdayInfoPictureBox)).EndInit();
@@ -400,8 +421,8 @@
         private System.Windows.Forms.Label phoneNumberLabel;
         private System.Windows.Forms.Label dateOfBirthLabel;
         private System.Windows.Forms.TextBox dateOfBirthTextBox;
-        private System.Windows.Forms.TextBox vKTextBox;
-        private System.Windows.Forms.Label vKLabel;
+        private System.Windows.Forms.TextBox vkTextBox;
+        private System.Windows.Forms.Label vkLabel;
         private System.Windows.Forms.Button removeContactButton;
         private System.Windows.Forms.Button editContactButton;
         private System.Windows.Forms.Button addContactButton;
@@ -410,7 +431,8 @@
         private System.Windows.Forms.PictureBox birthdayInfoPictureBox;
         private System.Windows.Forms.Label birthdayLabel;
         private System.Windows.Forms.Label birthdayNamesLabel;
-        private System.Windows.Forms.Button cloeInfoButton;
+        private System.Windows.Forms.Button closeInfoButton;
+        private System.Windows.Forms.TableLayoutPanel buttonsTableLayoutPanel;
     }
 }
 

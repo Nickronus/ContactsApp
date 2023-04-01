@@ -36,7 +36,7 @@
             this.githubLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.mailLabel = new System.Windows.Forms.Label();
-            this.oKButton = new System.Windows.Forms.Button();
+            this.okButton = new System.Windows.Forms.Button();
             this.infoRichTextBox = new System.Windows.Forms.RichTextBox();
             this.gitLinkLabel = new System.Windows.Forms.LinkLabel();
             this.usedImagesLabel = new System.Windows.Forms.Label();
@@ -108,15 +108,15 @@
             this.mailLabel.TabIndex = 8;
             this.mailLabel.Text = "nickronus@mail.ru";
             // 
-            // oKButton
+            // okButton
             // 
-            this.oKButton.Location = new System.Drawing.Point(437, 394);
-            this.oKButton.Name = "oKButton";
-            this.oKButton.Size = new System.Drawing.Size(75, 23);
-            this.oKButton.TabIndex = 10;
-            this.oKButton.Text = "OK";
-            this.oKButton.UseVisualStyleBackColor = true;
-            this.oKButton.Click += new System.EventHandler(this.oKButton_Click);
+            this.okButton.Location = new System.Drawing.Point(437, 394);
+            this.okButton.Name = "okButton";
+            this.okButton.Size = new System.Drawing.Size(75, 23);
+            this.okButton.TabIndex = 10;
+            this.okButton.Text = "OK";
+            this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.oKButton_Click);
             // 
             // infoRichTextBox
             // 
@@ -166,7 +166,7 @@
             this.Controls.Add(this.usedImagesLabel);
             this.Controls.Add(this.gitLinkLabel);
             this.Controls.Add(this.infoRichTextBox);
-            this.Controls.Add(this.oKButton);
+            this.Controls.Add(this.okButton);
             this.Controls.Add(this.mailLabel);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.githubLabel);
@@ -190,7 +190,7 @@
         private System.Windows.Forms.Label githubLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label mailLabel;
-        private System.Windows.Forms.Button oKButton;
+        private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.RichTextBox infoRichTextBox;
         private System.Windows.Forms.LinkLabel gitLinkLabel;
         private System.Windows.Forms.Label usedImagesLabel;
