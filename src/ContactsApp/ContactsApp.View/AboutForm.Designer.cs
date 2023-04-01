@@ -136,6 +136,7 @@
             this.gitLinkLabel.TabIndex = 12;
             this.gitLinkLabel.TabStop = true;
             this.gitLinkLabel.Text = "https://github.com/Nickronus";
+            this.gitLinkLabel.Click += new System.EventHandler(this.gitLinkLabel_Click);
             // 
             // usedImagesLabel
             // 
@@ -154,6 +155,7 @@
             this.usedImagesLinkLabel.TabIndex = 13;
             this.usedImagesLinkLabel.TabStop = true;
             this.usedImagesLinkLabel.Text = "https://www.flaticon.com";
+            this.usedImagesLinkLabel.Click += new System.EventHandler(this.usedImagesLinkLabel_Click);
             // 
             // AboutForm
             // 

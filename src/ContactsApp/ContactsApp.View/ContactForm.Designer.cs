@@ -172,7 +172,7 @@
             // 
             // okPanel
             // 
-            this.okPanel.BackColor = System.Drawing.Color.Azure;
+            this.okPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.okPanel.Controls.Add(this.okButton);
             this.okPanel.Controls.Add(this.cancelButton);
             this.okPanel.Location = new System.Drawing.Point(-3, 321);

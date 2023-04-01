@@ -26,5 +26,15 @@ namespace ContactsApp.View
         {
             e.Handled = true;
         }
+
+        private void gitLinkLabel_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Nickronus");
+        }
+
+        private void usedImagesLinkLabel_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://icons8.com/");
+        }
     }
 }
