@@ -163,7 +163,6 @@ namespace ContactsApp.Model
             TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
             return textInfo.ToTitleCase(value);
         }
-
     }
 
     class MainClass
