@@ -8,19 +8,36 @@ using System.IO;
 
 namespace ContactsApp.Model
 {
+    /// <summary>
+    /// Класс управления данными проекта.
+    /// </summary>
     internal class ProjectManager
     {
+        /// <summary>
+        /// Путь сохранения контактов.
+        /// </summary>
         private const string _filePath = "C:\\Users\\Nickr\\AppData\\Roaming\\<ваше имя>\\ContactsApp\\ContactsApp.notes";
 
+        public string FilePath
+        {
+            get { return _filePath; }
+        }
+
+        /// <summary>
+        /// Записывает контакты в файл.
+        /// </summary>
         public void WriteProjectToJsonFile(Project project)
         {
             string json = JsonConvert.SerializeObject(project, Formatting.Indented);
-            File.WriteAllText(_filePath, json);
+            File.WriteAllText(FilePath, json);
         }
 
+        /// <summary>
+        /// Загружает контакты из файла.
+        /// </summary>
         public Project LoadProjectFromJsonFile()
         {
-            return JsonConvert.DeserializeObject<Project>(_filePath);
+            return JsonConvert.DeserializeObject<Project>(FilePath);
         }
     }
 }

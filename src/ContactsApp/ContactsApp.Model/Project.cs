@@ -30,6 +30,11 @@ namespace ContactsApp.Model
             }
         }
 
+        Project(List<Contact> contacts)
+        {
+            this._contacts = contacts;
+        }
+
         /// <summary>
         /// Поиск именинников.
         /// </summary>
