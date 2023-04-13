@@ -116,8 +116,7 @@ namespace ContactsApp.Model
             get { return _dateOfBirth; }
             set
             {
-                DateTime minDate = new DateTime(1900);
-                if ((value > DateTime.Now)||(value < minDate))
+                if ((value > DateTime.Now)||(value < new DateTime(1900, 1, 1)))
                 {
                     throw new ArgumentException(String.Format("Error. Incorrect data."));
                 }
