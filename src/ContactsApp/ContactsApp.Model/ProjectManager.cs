@@ -27,18 +27,12 @@
         /// <summary>
         /// Возвращает путь файла.
         /// </summary>
-        public string Path
-        {
-            get { return _path; }
-        }
+        public string Path { get { return _path; }}
 
         /// <summary>
         /// Возвращает имя файла.
         /// </summary>
-        public string FileName
-        {
-            get { return _fileName; }
-        }
+        public string FileName { get { return _fileName; }}
 
         /// <summary>
         /// Записывает контакты в файл с проверкой существования папки.
@@ -60,7 +54,12 @@
         {
             try
             {
-                return JsonConvert.DeserializeObject<Project>(Path + FileName);
+                Project project = JsonConvert.DeserializeObject<Project>(Path + FileName);
+                if(project == null)
+                {
+                    return new Project();
+                }
+                return project;
             }
             catch(Exception)
             {

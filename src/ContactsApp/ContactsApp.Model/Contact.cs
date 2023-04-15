@@ -1,5 +1,5 @@
-﻿//TODO ContApp.M - Свойства - прилож виндоус поменять на библиотека классов
-//назначиь вьюху запускаемым проектом
+﻿//TODO ContactApp.Model - Свойства - поменять на библиотеку классов,
+//назначиь вьюху запускаемым проектом.
 namespace ContactsApp.Model
 {
     using System;
@@ -71,7 +71,7 @@ namespace ContactsApp.Model
             }
             set 
             {
-                CheckLenghtOfTheString(value, 100);
+                CheckLengthOfTheString(value, 100);
                 _fullName = ToCapitalLettersStyle(value);
             }
         }
@@ -87,7 +87,7 @@ namespace ContactsApp.Model
             }
             set
             {
-                CheckLenghtOfTheString(value, 100);
+                CheckLengthOfTheString(value, 100);
                 _email = value;
             }
         }
@@ -139,7 +139,7 @@ namespace ContactsApp.Model
             }
             set
             {
-                CheckLenghtOfTheString(value, 50);
+                CheckLengthOfTheString(value, 50);
                 _vkId = value;
             }
         }
@@ -170,9 +170,9 @@ namespace ContactsApp.Model
         /// <summary>
         /// Проверка длины строки на соответствие необходимой длине.
         /// </summary>
-        private void CheckLenghtOfTheString(string value, int maxLenght)
+        private void CheckLengthOfTheString(string value, int maxLength)
         {
-            if (value.Length > maxLenght)
+            if (value.Length > maxLength)
             {
                 throw new ArgumentException(String.Format("Error. Size more then max."));
             }
