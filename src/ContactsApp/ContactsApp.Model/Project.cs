@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Globalization;
-
-namespace ContactsApp.Model
+﻿namespace ContactsApp.Model
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+
     /// <summary>
     /// Описывает проект.
     /// </summary>
-    internal class Project
+    public class Project
     {
         /// <summary>
         /// Контакты.
@@ -21,41 +17,43 @@ namespace ContactsApp.Model
         /// <summary>
         /// Возвращает или задаёт контакты.
         /// </summary>
-        public List<Contact> Contacts
+        public List<Contact> Contacts { get; private set; }
+
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="Project"/>.
+        /// </summary>
+        public Project()
         {
-            get { return _contacts; }
-            set
-            {
-                _contacts = SortContacts(value);
-            }
+            _contacts = new List<Contact>();
         }
 
         /// <summary>
-        /// Конструктор с параметром "контакт".
+        /// Создаёт экземпляр класса <see cref="Project"/> принимая список.
         /// </summary>
-        Project(List<Contact> contacts)
+        public Project(List<Contact> contacts)
         {
-            this._contacts = contacts;
+            _contacts = contacts;
         }
 
         /// <summary>
         /// Поиск именинников.
         /// </summary>
-        public List<Contact> FindBirthdayBoys()
+        public List<Contact> FindBirthdayContacts(List<Contact> contacts)
         {
-            List<Contact> birthdayBoys;
+            List<Contact> birthdayContacts;
             DateTime today = DateTime.Today;
-            birthdayBoys = _contacts.FindAll(contact => contact.DateOfBirth.Date == today);
-            return birthdayBoys;
+            birthdayContacts = contacts.FindAll(contact => (contact.DateOfBirth.Date.Month == today.Date.Month) &&
+            (contact.DateOfBirth.Date.Day == today.Date.Day));
+            return birthdayContacts;
         }
 
         /// <summary>
         /// Поиск контакта.
         /// </summary>
-        public List<Contact> FindContact(string soughtContact)
+        public List<Contact> FindContact(string subString)
         {
-            return _contacts.FindAll(contact => (contact.FullName.IndexOf(soughtContact) != -1) ||
-            (ToCapitalLettersStyle(contact.FullName).IndexOf(soughtContact) != -1));
+            subString = subString.ToLower();
+            return _contacts.FindAll(contact => contact.FullName.ToLower().Contains(subString));
         }
 
         /// <summary>

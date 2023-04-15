@@ -1,39 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using System.IO;
-
-namespace ContactsApp.Model
+﻿namespace ContactsApp.Model
 {
+    using Newtonsoft.Json;
+    using System.IO;
+    using System;
+
     /// <summary>
     /// Класс управления данными проекта.
     /// </summary>
-    internal class ProjectManager
+    public class ProjectManager
     {
         /// <summary>
-        /// Путь сохранения контактов.
+        /// Путь к системной папке с данными приложений.
         /// </summary>
-        private const string _filePath = "C:\\Users\\Nickr\\AppData\\Roaming\\<ваше имя>\\ContactsApp\\ContactsApp.notes";
+        private static string _appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+        /// <summary>
+        /// Имя файла.
+        /// </summary>
+        private static string _fileName = "ContactsApp.notes";
+
+        /// <summary>
+        /// Путь к папке сохранения.
+        /// </summary>
+        private static string _path = $@"{_appData}\ContactsApp";
 
         /// <summary>
         /// Возвращает путь файла.
         /// </summary>
-
-        public string FilePath
+        public string Path
         {
-            get { return _filePath; }
+            get { return _path; }
         }
 
         /// <summary>
-        /// Записывает контакты в файл.
+        /// Возвращает имя файла.
+        /// </summary>
+        public string FileName
+        {
+            get { return _fileName; }
+        }
+
+        /// <summary>
+        /// Записывает контакты в файл с проверкой существования папки.
         /// </summary>
         public void WriteProjectToJsonFile(Project project)
         {
+            if(! Directory.Exists(Path))
+            {
+                Directory.CreateDirectory(Path);
+            }
             string json = JsonConvert.SerializeObject(project, Formatting.Indented);
-            File.WriteAllText(FilePath, json);
+            File.WriteAllText(Path + FileName, json);
         }
 
         /// <summary>
@@ -41,7 +58,14 @@ namespace ContactsApp.Model
         /// </summary>
         public Project LoadProjectFromJsonFile()
         {
-            return JsonConvert.DeserializeObject<Project>(FilePath);
+            try
+            {
+                return JsonConvert.DeserializeObject<Project>(Path + FileName);
+            }
+            catch(Exception)
+            {
+                return new Project();
+            }
         }
     }
 }

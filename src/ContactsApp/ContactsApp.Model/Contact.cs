@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Globalization;
-//TODU ContApp.M - Свойства - прилож виндоус поменять на библиотека классов
+﻿//TODO ContApp.M - Свойства - прилож виндоус поменять на библиотека классов
 //назначиь вьюху запускаемым проектом
 namespace ContactsApp.Model
 {
+    using System;
+    using System.Linq;
+    using System.Globalization;
+
     /// <summary>
-    /// Описывает контакт.
+    /// Контакт.
     /// </summary>
-    internal class Contact : System.ICloneable
+    public class Contact : System.ICloneable
     {
         /// <summary>
         /// Полное имя.
@@ -39,27 +37,27 @@ namespace ContactsApp.Model
         private string _vkId;
 
         /// <summary>
-        /// Пустой конструктор.
+        /// Создаёт экземпляр класса <see cref="Contact"/>.
         /// </summary>
         public Contact()
         {
-            this.Email = "";
-            this.PhoneNumber = "";
-            this.FullName = "";
-            this.DateOfBirth = DateTime.Now;
-            this.VkId = "";
+            Email = "";
+            PhoneNumber = "";
+            FullName = "";
+            DateOfBirth = new DateTime(2000, 1, 1);
+            VkId = "";
         }
 
         /// <summary>
-        /// Конструктор, принимащий и задающий все поля класса.
+        /// Создаёт экземпляр класса <see cref="Contact"/> с заданными полями.
         /// </summary>
-        public Contact(string fullName, string email, string phoneNumber, string dateOfBirth, string vkId)
+        public Contact(string fullName, string email, string phoneNumber, DateTime dateOfBirth, string vkId)
         {
-            this.Email = Email;
-            this.PhoneNumber = PhoneNumber;
-            this.FullName = FullName;
-            this.DateOfBirth = DateOfBirth;
-            this.VkId = VkId;
+            Email = Email;
+            PhoneNumber = PhoneNumber;
+            FullName = FullName;
+            DateOfBirth = DateOfBirth;
+            VkId = VkId;
         }
 
         /// <summary>
@@ -67,14 +65,14 @@ namespace ContactsApp.Model
         /// </summary>
         public string FullName
         {
-            get { return _fullName; }
+            get 
+            { 
+                return _fullName; 
+            }
             set 
             {
-                if (value.Length > 100)
-                {
-                    throw new ArgumentException(String.Format("Error. Size more 100."));
-                }
-                this._fullName = this.ToCapitalLettersStyle(value);
+                CheckLenghtOfTheString(value, 100);
+                _fullName = ToCapitalLettersStyle(value);
             }
         }
 
@@ -83,13 +81,13 @@ namespace ContactsApp.Model
         /// </summary>
         public string Email
         {
-            get { return _email; }
+            get 
+            { 
+                return _email; 
+            }
             set
             {
-                if (value.Length > 100)
-                {
-                    throw new ArgumentException(String.Format("Error. Size more 100."));
-                }
+                CheckLenghtOfTheString(value, 100);
                 _email = value;
             }
         }
@@ -99,7 +97,10 @@ namespace ContactsApp.Model
         /// </summary>
         public string PhoneNumber
         {
-            get { return _phoneNumber; }
+            get 
+            { 
+                return _phoneNumber; 
+            }
             set
             {
                 string allowedChars = "1234567890+- )(";
@@ -113,7 +114,10 @@ namespace ContactsApp.Model
         /// </summary>
         public DateTime DateOfBirth
         {
-            get { return _dateOfBirth; }
+            get 
+            { 
+                return _dateOfBirth; 
+            }
             set
             {
                 if ((value > DateTime.Now)||(value < new DateTime(1900, 1, 1)))
@@ -129,19 +133,19 @@ namespace ContactsApp.Model
         /// </summary>
         public string VkId
         {
-            get { return _vkId; }
+            get 
+            { 
+                return _vkId; 
+            }
             set
             {
-                if (value.Length > 50)
-                {
-                    throw new ArgumentException(String.Format("Error. Size more 100."));
-                }
-                this._vkId = value;
+                CheckLenghtOfTheString(value, 50);
+                _vkId = value;
             }
         }
 
         /// <summary>
-        /// Клониование данного объекта.
+        /// Клонирование данного объекта.
         /// </summary>
         public object Clone()
         {
@@ -162,17 +166,16 @@ namespace ContactsApp.Model
             TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
             return textInfo.ToTitleCase(value);
         }
-    }
 
-    class MainClass
-    {
-       public static void Main(string[] argc)
+        /// <summary>
+        /// Проверка длины строки на соответствие необходимой длине.
+        /// </summary>
+        private void CheckLenghtOfTheString(string value, int maxLenght)
         {
-            Contact c = new Contact();
-            c.FullName = "qwe ewqewq gh";
-            c.PhoneNumber = "wrew9234-g wtw2324dfg  +";
-            Console.WriteLine(c.PhoneNumber);
-            
+            if (value.Length > maxLenght)
+            {
+                throw new ArgumentException(String.Format("Error. Size more then max."));
+            }
         }
     }
 }
