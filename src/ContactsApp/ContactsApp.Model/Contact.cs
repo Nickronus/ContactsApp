@@ -71,8 +71,8 @@ namespace ContactsApp.Model
             }
             set 
             {
-                CheckLengthOfTheString(value, 100);
-                _fullName = ToCapitalLettersStyle(value);
+                ContactsAppServiceClass.CheckLengthOfTheString(value, 100);
+                _fullName = ContactsAppServiceClass.ToCapitalLettersStyle(value);
             }
         }
 
@@ -87,7 +87,7 @@ namespace ContactsApp.Model
             }
             set
             {
-                CheckLengthOfTheString(value, 100);
+                ContactsAppServiceClass.CheckLengthOfTheString(value, 100);
                 _email = value;
             }
         }
@@ -139,7 +139,7 @@ namespace ContactsApp.Model
             }
             set
             {
-                CheckLengthOfTheString(value, 50);
+                ContactsAppServiceClass.CheckLengthOfTheString(value, 50);
                 _vkId = value;
             }
         }
@@ -156,26 +156,6 @@ namespace ContactsApp.Model
             contact.DateOfBirth = DateOfBirth;
             contact.VkId = VkId;
             return contact;
-        }
-
-        /// <summary>
-        /// Приведение строки к стилю "Каждое слово с заглавной буквы".
-        /// </summary>
-        private string ToCapitalLettersStyle(string value)
-        {
-            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-            return textInfo.ToTitleCase(value);
-        }
-
-        /// <summary>
-        /// Проверка длины строки на соответствие необходимой длине.
-        /// </summary>
-        private void CheckLengthOfTheString(string value, int maxLength)
-        {
-            if (value.Length > maxLength)
-            {
-                throw new ArgumentException(String.Format("Error. Size more then max."));
-            }
         }
     }
 }
