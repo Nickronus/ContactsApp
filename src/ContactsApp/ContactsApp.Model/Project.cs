@@ -30,6 +30,9 @@ namespace ContactsApp.Model
             }
         }
 
+        /// <summary>
+        /// Конструктор с параметром "контакт".
+        /// </summary>
         Project(List<Contact> contacts)
         {
             this._contacts = contacts;

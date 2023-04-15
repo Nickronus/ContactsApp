@@ -18,6 +18,10 @@ namespace ContactsApp.Model
         /// </summary>
         private const string _filePath = "C:\\Users\\Nickr\\AppData\\Roaming\\<ваше имя>\\ContactsApp\\ContactsApp.notes";
 
+        /// <summary>
+        /// Возвращает путь файла.
+        /// </summary>
+
         public string FilePath
         {
             get { return _filePath; }
