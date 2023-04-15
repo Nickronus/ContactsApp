@@ -71,8 +71,8 @@ namespace ContactsApp.Model
             }
             set 
             {
-                ContactsAppServiceClass.CheckLengthOfTheString(value, 100);
-                _fullName = ContactsAppServiceClass.ToCapitalLettersStyle(value);
+                ServiceContactsApp.CheckLengthOfTheString(value, 100);
+                _fullName = ServiceContactsApp.ToCapitalLettersStyle(value);
             }
         }
 
@@ -87,7 +87,7 @@ namespace ContactsApp.Model
             }
             set
             {
-                ContactsAppServiceClass.CheckLengthOfTheString(value, 100);
+                ServiceContactsApp.CheckLengthOfTheString(value, 100);
                 _email = value;
             }
         }
@@ -139,7 +139,7 @@ namespace ContactsApp.Model
             }
             set
             {
-                ContactsAppServiceClass.CheckLengthOfTheString(value, 50);
+                ServiceContactsApp.CheckLengthOfTheString(value, 50);
                 _vkId = value;
             }
         }

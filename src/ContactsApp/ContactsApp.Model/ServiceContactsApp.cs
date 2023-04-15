@@ -3,7 +3,7 @@
     using System;
     using System.Globalization;
 
-    public class ContactsAppServiceClass
+    public class ServiceContactsApp
     {
         /// <summary>
         /// Приведение строки к стилю "Каждое слово с заглавной буквы".
