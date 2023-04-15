@@ -10,11 +10,6 @@
     public class Project
     {
         /// <summary>
-        /// Контакты.
-        /// </summary>
-        private List<Contact> _contacts;
-
-        /// <summary>
         /// Возвращает или задаёт контакты.
         /// </summary>
         public List<Contact> Contacts { get; private set; }
@@ -24,7 +19,7 @@
         /// </summary>
         public Project()
         {
-            _contacts = new List<Contact>();
+            Contacts = new List<Contact>();
         }
 
         /// <summary>
@@ -32,7 +27,7 @@
         /// </summary>
         public Project(List<Contact> contacts)
         {
-            _contacts = contacts;
+            Contacts = contacts;
         }
 
         /// <summary>
@@ -53,7 +48,7 @@
         public List<Contact> FindContact(string subString)
         {
             subString = subString.ToLower();
-            return _contacts.FindAll(contact => contact.FullName.ToLower().Contains(subString));
+            return Contacts.FindAll(contact => contact.FullName.ToLower().Contains(subString));
         }
 
         /// <summary>

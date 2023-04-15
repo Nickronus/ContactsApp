@@ -4,12 +4,11 @@ namespace ContactsApp.Model
 {
     using System;
     using System.Linq;
-    using System.Globalization;
 
     /// <summary>
     /// Контакт.
     /// </summary>
-    public class Contact : System.ICloneable
+    public class Contact : ICloneable
     {
         /// <summary>
         /// Полное имя.
@@ -71,8 +70,8 @@ namespace ContactsApp.Model
             }
             set 
             {
-                ServiceContactsApp.CheckLengthOfTheString(value, 100);
-                _fullName = ServiceContactsApp.ToCapitalLettersStyle(value);
+                ContactsService.CheckLengthOfTheString(value, 100);
+                _fullName = ContactsService.ToCapitalLettersStyle(value);
             }
         }
 
@@ -87,7 +86,7 @@ namespace ContactsApp.Model
             }
             set
             {
-                ServiceContactsApp.CheckLengthOfTheString(value, 100);
+                ContactsService.CheckLengthOfTheString(value, 100);
                 _email = value;
             }
         }
@@ -139,7 +138,7 @@ namespace ContactsApp.Model
             }
             set
             {
-                ServiceContactsApp.CheckLengthOfTheString(value, 50);
+                ContactsService.CheckLengthOfTheString(value, 50);
                 _vkId = value;
             }
         }

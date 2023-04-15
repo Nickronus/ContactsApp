@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contact.cs" />
-    <Compile Include="ServiceContactsApp.cs" />
+    <Compile Include="ContactsService.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="ProjectManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
