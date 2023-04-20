@@ -132,5 +132,11 @@
     <None Include="Resources\add_contact_gray.ico" />
     <None Include="Resources\3772240.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ContactsApp.Model\ContactsApp.Model.csproj">
+      <Project>{add59414-c205-470d-8904-0a26ac640093}</Project>
+      <Name>ContactsApp.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

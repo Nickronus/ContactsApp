@@ -131,6 +131,7 @@
             this.removeContactButton.Size = new System.Drawing.Size(87, 40);
             this.removeContactButton.TabIndex = 12;
             this.removeContactButton.UseVisualStyleBackColor = false;
+            this.removeContactButton.Click += new System.EventHandler(this.removeContactButton_Click);
             this.removeContactButton.MouseEnter += new System.EventHandler(this.removeContactButton_MouseEnter);
             this.removeContactButton.MouseLeave += new System.EventHandler(this.removeContactButton_MouseLeave);
             // 
@@ -180,18 +181,12 @@
             this.contactsListBox.FormattingEnabled = true;
             this.contactsListBox.IntegralHeight = false;
             this.contactsListBox.Items.AddRange(new object[] {
-            "Авшарян Витя",
-            "Банников Саня",
-            "Бутылкина Алёна",
-            "Врач Василий",
-            "Дроздов Владимир",
-            "Зорин Петя",
-            "Макаров Макар",
-            "Яша Иванов"});
+            ""});
             this.contactsListBox.Location = new System.Drawing.Point(3, 29);
             this.contactsListBox.Name = "contactsListBox";
             this.contactsListBox.Size = new System.Drawing.Size(258, 378);
             this.contactsListBox.TabIndex = 13;
+            this.contactsListBox.SelectedIndexChanged += new System.EventHandler(this.contactsListBox_SelectedIndexChanged);
             // 
             // findTextBox
             // 
