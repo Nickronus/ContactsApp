@@ -54,6 +54,7 @@
             this.vkTextBox.Name = "vkTextBox";
             this.vkTextBox.Size = new System.Drawing.Size(204, 20);
             this.vkTextBox.TabIndex = 21;
+            this.vkTextBox.TextChanged += new System.EventHandler(this.vkTextBox_TextChanged);
             // 
             // vkLabel
             // 
@@ -79,6 +80,7 @@
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(204, 20);
             this.phoneNumberTextBox.TabIndex = 17;
+            this.phoneNumberTextBox.TextChanged += new System.EventHandler(this.phoneNumberTextBox_TextChanged);
             // 
             // phoneNumberLabel
             // 
@@ -106,6 +108,7 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(394, 20);
             this.emailTextBox.TabIndex = 15;
+            this.emailTextBox.TextChanged += new System.EventHandler(this.emailTextBox_TextChanged);
             // 
             // emailLabel
             // 
@@ -124,6 +127,7 @@
             this.fullNameTextBox.Name = "fullNameTextBox";
             this.fullNameTextBox.Size = new System.Drawing.Size(394, 20);
             this.fullNameTextBox.TabIndex = 13;
+            this.fullNameTextBox.TextChanged += new System.EventHandler(this.fullNameTextBox_TextChanged);
             // 
             // personPictureBox
             // 
@@ -187,6 +191,7 @@
             this.dateOfBirthTimePicker.Name = "dateOfBirthTimePicker";
             this.dateOfBirthTimePicker.Size = new System.Drawing.Size(204, 20);
             this.dateOfBirthTimePicker.TabIndex = 25;
+            this.dateOfBirthTimePicker.ValueChanged += new System.EventHandler(this.dateOfBirthTimePicker_ValueChanged);
             // 
             // ContactForm
             // 

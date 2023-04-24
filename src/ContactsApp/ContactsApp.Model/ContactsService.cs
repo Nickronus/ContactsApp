@@ -19,10 +19,10 @@
         /// </summary>
         public static void CheckLengthOfTheString(string value, int maxLength)
         {
-            if (value.Length > maxLength)
-            {
-                throw new ArgumentException(String.Format("Error. Size more then max."));
-            }
+                if (value.Length > maxLength)
+                {
+                    throw new ArgumentException(String.Format("Error. Size more then max."));
+                }
         }
     }
 }

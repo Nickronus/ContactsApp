@@ -52,11 +52,11 @@ namespace ContactsApp.Model
         /// </summary>
         public Contact(string fullName, string email, string phoneNumber, DateTime dateOfBirth, string vkId)
         {
-            Email = Email;
-            PhoneNumber = PhoneNumber;
-            FullName = FullName;
-            DateOfBirth = DateOfBirth;
-            VkId = VkId;
+            Email = email;
+            PhoneNumber = phoneNumber;
+            FullName = fullName;
+            DateOfBirth = dateOfBirth;
+            VkId = vkId;
         }
 
         /// <summary>
