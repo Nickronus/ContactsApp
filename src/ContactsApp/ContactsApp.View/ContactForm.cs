@@ -18,14 +18,29 @@ namespace ContactsApp.View
         /// </summary>
         private Contact _contact;
 
+        /// <summary>
+        /// Текст ошибки полного имени.
+        /// </summary>
         private string _fullNameError;
 
+        /// <summary>
+        /// Текст ошибки email.
+        /// </summary>
         private string _emailError;
 
+        /// <summary>
+        /// Текст ошибке номера телефона.
+        /// </summary>
         private string _phoneNumberError;
 
+        /// <summary>
+        /// Текст ошибки Вк ID.
+        /// </summary>
         private string _vkIdError;
 
+        /// <summary>
+        /// Текст ошибки даты рождения.
+        /// </summary>
         private string _dateOfBirthError;
 
         public ContactForm()
@@ -42,6 +57,7 @@ namespace ContactsApp.View
         {
             if(CheckFormOnError())
             {
+                UpdateContact();
                 this.Close();
             }
         }
@@ -164,6 +180,18 @@ namespace ContactsApp.View
                 return false;
             }
             return true;
+        }
+
+        /// <summary>
+        /// Обновление данных контакта.
+        /// </summary>
+        private void UpdateContact()
+        {
+            _contact.Email = emailTextBox.Text;
+            _contact.FullName = fullNameTextBox.Text;
+            _contact.DateOfBirth = dateOfBirthTimePicker.Value;
+            _contact.PhoneNumber = phoneNumberTextBox.Text;
+            _contact.VkId = vkTextBox.Text;
         }
     }
 }
