@@ -83,7 +83,7 @@ namespace ContactsApp.View
         {
             try
             {
-                _contact.FullName = fullNameTextBox.Text;
+                //_contact.FullName = fullNameTextBox.Text;
                 _fullNameError = "";
                 fullNameTextBox.BackColor = Color.White;
             }
@@ -98,7 +98,7 @@ namespace ContactsApp.View
         {
             try
             {
-                _contact.Email = emailTextBox.Text;
+                //_contact.Email = emailTextBox.Text;
                 _emailError = "";
                 emailTextBox.BackColor = Color.White;
             }
@@ -113,7 +113,7 @@ namespace ContactsApp.View
         {
             try
             {
-                _contact.PhoneNumber = phoneNumberTextBox.Text;
+                //_contact.PhoneNumber = phoneNumberTextBox.Text;
                 _phoneNumberError = "";
                 phoneNumberTextBox.BackColor = Color.White;
             }
@@ -128,7 +128,7 @@ namespace ContactsApp.View
         {
             try
             {
-                _contact.VkId = vkTextBox.Text;
+                //_contact.VkId = vkTextBox.Text;
                 _vkIdError = "";
                 vkTextBox.BackColor = Color.White;
             }
@@ -143,7 +143,7 @@ namespace ContactsApp.View
         {
             try
             {
-                _contact.DateOfBirth = dateOfBirthTimePicker.Value;
+                //_contact.DateOfBirth = dateOfBirthTimePicker.Value;
                 _dateOfBirthError = "";
                 dateOfBirthTimePicker.BackColor = Color.White;
             }
