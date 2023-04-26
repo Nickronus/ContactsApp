@@ -12,7 +12,7 @@
         /// <summary>
         /// Возвращает или задаёт контакты.
         /// </summary>
-        public List<Contact> Contacts { get; private set; }
+        public List<Contact> Contacts { get; set; }
 
         /// <summary>
         /// Создаёт экземпляр класса <see cref="Project"/>.
@@ -45,7 +45,7 @@
         /// <summary>
         /// Поиск контакта.
         /// </summary>
-        public List<Contact> FindContact(string subString)
+        public List<Contact> FindContacts(string subString)
         {
             subString = subString.ToLower();
             return Contacts.FindAll(contact => contact.FullName.ToLower().Contains(subString));
@@ -54,10 +54,10 @@
         /// <summary>
         /// Сортировка контактов.
         /// </summary>
-        private List<Contact> SortContacts(List<Contact> contacts)
+        public List<Contact> SortContacts()
         {
-            contacts.Sort((c1, c2) => c1.FullName.CompareTo(c2.FullName));
-            return contacts;
+            Contacts.Sort((c1, c2) => c1.FullName.CompareTo(c2.FullName));
+            return Contacts;
         }
 
         /// <summary>

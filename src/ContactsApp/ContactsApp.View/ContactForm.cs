@@ -58,22 +58,23 @@ namespace ContactsApp.View
             }
         }
 
+        /// <summary>
+        /// Конструктор без параметров.
+        /// </summary>
         public ContactForm()
         {
             InitializeComponent();
-            addPhotoButton.FlatStyle = FlatStyle.Flat;
-            addPhotoButton.FlatAppearance.BorderSize = 1;
-            addPhotoButton.FlatAppearance.BorderColor = Color.White;
             _contact = new Contact();
             //_contact = new Contact("Иван Иванович", "ivashka@ivan.com", "89001003355", new DateTime(2000, 1, 1), "");
         }
 
+        /// <summary>
+        /// Конструктор с параметром контакта.
+        /// </summary>
+        /// <param name="contact"></param>
         public ContactForm(Contact contact)
         {
             InitializeComponent();
-            addPhotoButton.FlatStyle = FlatStyle.Flat;
-            addPhotoButton.FlatAppearance.BorderSize = 1;
-            addPhotoButton.FlatAppearance.BorderColor = Color.White;
             Contact = contact;
             UpdateForm();
             //_contact = new Contact("Иван Иванович", "ivashka@ivan.com", "89001003355", new DateTime(2000, 1, 1), "");
