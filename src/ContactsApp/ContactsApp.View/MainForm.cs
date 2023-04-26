@@ -27,17 +27,20 @@ namespace ContactsApp.View
 
         private void addContactButton_Click(object sender, EventArgs e)
         {
-            ContactForm contactForm = new ContactForm();
-            contactForm.ShowDialog();
-
             AddContact();
             UpdateListBox();
         }
 
         private void editContactButton_Click(object sender, EventArgs e)
         {
-            ContactForm contactForm = new ContactForm();
-            contactForm.ShowDialog();
+            if(contactsListBox.SelectedIndex != -1)
+            {
+                int index = contactsListBox.SelectedIndex;
+                EditContact(index);
+                UpdateListBox();
+                UpdateSelectedContact(index);
+                contactsListBox.SelectedIndex = index;
+            }
         }
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
@@ -148,23 +151,20 @@ namespace ContactsApp.View
             }
         }
         /// <summary>
-        /// Добавление контактов в проект (random).
+        /// Добавление контактов в проект.
         /// </summary>
         private void AddContact()
         {
-            Random rnd = new Random();
-            string[] firstNames = { "Иван ", "Катя ", "Владимир ", "Артём ",
-                          "Дмитрий ", "Яна ", "Гриша ", "Семён ",
-                          "Добрыня ", "Маруся " };
-            string[] secondNames = { "Авакян", "Аматуни", "Багратуни", "Брутян",
-                            "Галустян", "Григорян", "Дарбинян", "Есаянц",
-                            "Иоаннисян", "Луспекян" };
-
-            Contact contact = new Contact();
-            int fIndex = rnd.Next(firstNames.Length);
-            int sIndex = rnd.Next(secondNames.Length);
-            contact.FullName = firstNames[fIndex] + secondNames[sIndex];
-            _project.Contacts.Add(contact);
+            ContactForm contactForm = new ContactForm();
+            contactForm.ShowDialog();
+            contactForm.Close();
+            if ((contactForm.Contact != null) && ((contactForm.Contact.Email != "") || 
+            (contactForm.Contact.FullName != "") || (contactForm.Contact.VkId != "") || 
+            (contactForm.Contact.PhoneNumber != "")))
+            {
+                _project.Contacts.Add(contactForm.Contact);
+            }
+            
         }
 
         /// <summary>
@@ -209,6 +209,44 @@ namespace ContactsApp.View
             phoneNumberTextBox.Text = "";
             dateOfBirthTextBox.Text = "";
             vkTextBox.Text = "";
+        }
+
+        /// <summary>
+        /// Добавление рандомного контакта.
+        /// </summary>
+        private void AddRandomContact()
+        {
+            Random rnd = new Random();
+            string[] firstNames = { "Иван ", "Катя ", "Владимир ", "Артём ",
+                          "Дмитрий ", "Яна ", "Гриша ", "Семён ",
+                          "Добрыня ", "Маруся " };
+            string[] secondNames = { "Авакян", "Аматуни", "Багратуни", "Брутян",
+                            "Галустян", "Григорян", "Дарбинян", "Есаянц",
+                            "Иоаннисян", "Луспекян" };
+
+            Contact contact = new Contact();
+            int fIndex = rnd.Next(firstNames.Length);
+            int sIndex = rnd.Next(secondNames.Length);
+            contact.FullName = firstNames[fIndex] + secondNames[sIndex];
+            _project.Contacts.Add(contact);
+        }
+
+        private void EditContact(int index)
+        {
+            ContactForm contactForm = new ContactForm((Contact)_project.Contacts[index].Clone());
+            contactForm.ShowDialog();
+            contactForm.Close();
+            if ((contactForm.Contact != null) && ((contactForm.Contact.Email != "") ||
+            (contactForm.Contact.FullName != "") || (contactForm.Contact.VkId != "") ||
+            (contactForm.Contact.PhoneNumber != "")))
+            {
+                _project.Contacts[index] = contactForm.Contact;
+            }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

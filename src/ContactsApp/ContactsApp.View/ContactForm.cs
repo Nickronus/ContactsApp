@@ -21,27 +21,42 @@ namespace ContactsApp.View
         /// <summary>
         /// Текст ошибки полного имени.
         /// </summary>
-        private string _fullNameError;
+        private string _fullNameError = "";
 
         /// <summary>
         /// Текст ошибки email.
         /// </summary>
-        private string _emailError;
+        private string _emailError = "";
 
         /// <summary>
         /// Текст ошибке номера телефона.
         /// </summary>
-        private string _phoneNumberError;
+        private string _phoneNumberError = "";
 
         /// <summary>
         /// Текст ошибки Вк ID.
         /// </summary>
-        private string _vkIdError;
+        private string _vkIdError = "";
 
         /// <summary>
         /// Текст ошибки даты рождения.
         /// </summary>
-        private string _dateOfBirthError;
+        private string _dateOfBirthError = "";
+
+        /// <summary>
+        /// Возвращает или задаёт контакт.
+        /// </summary>
+        public Contact Contact
+        {
+            get 
+            {
+                return _contact; 
+            }
+            set
+            {
+                _contact = value;
+            }
+        }
 
         public ContactForm()
         {
@@ -49,8 +64,19 @@ namespace ContactsApp.View
             addPhotoButton.FlatStyle = FlatStyle.Flat;
             addPhotoButton.FlatAppearance.BorderSize = 1;
             addPhotoButton.FlatAppearance.BorderColor = Color.White;
-            _contact = new Contact("Иван Иванович", "ivashka@ivan.com", "89001003355", new DateTime(2000, 1, 1), "");
+            _contact = new Contact();
+            //_contact = new Contact("Иван Иванович", "ivashka@ivan.com", "89001003355", new DateTime(2000, 1, 1), "");
+        }
+
+        public ContactForm(Contact contact)
+        {
+            InitializeComponent();
+            addPhotoButton.FlatStyle = FlatStyle.Flat;
+            addPhotoButton.FlatAppearance.BorderSize = 1;
+            addPhotoButton.FlatAppearance.BorderColor = Color.White;
+            Contact = contact;
             UpdateForm();
+            //_contact = new Contact("Иван Иванович", "ivashka@ivan.com", "89001003355", new DateTime(2000, 1, 1), "");
         }
 
         private void oKButton_Click(object sender, EventArgs e)
@@ -64,7 +90,11 @@ namespace ContactsApp.View
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Не сохранять контакт?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                Contact = null;
+                this.Close();
+            }
         }
 
         private void addPhotoButton_MouseEnter(object sender, EventArgs e)
@@ -83,7 +113,8 @@ namespace ContactsApp.View
         {
             try
             {
-                //_contact.FullName = fullNameTextBox.Text;
+                Contact contact = new Contact();
+                contact.FullName = fullNameTextBox.Text;
                 _fullNameError = "";
                 fullNameTextBox.BackColor = Color.White;
             }
@@ -98,7 +129,8 @@ namespace ContactsApp.View
         {
             try
             {
-                //_contact.Email = emailTextBox.Text;
+                Contact contact = new Contact();
+                contact.Email = emailTextBox.Text;
                 _emailError = "";
                 emailTextBox.BackColor = Color.White;
             }
@@ -113,7 +145,8 @@ namespace ContactsApp.View
         {
             try
             {
-                //_contact.PhoneNumber = phoneNumberTextBox.Text;
+                Contact contact = new Contact();
+                contact.PhoneNumber = phoneNumberTextBox.Text;
                 _phoneNumberError = "";
                 phoneNumberTextBox.BackColor = Color.White;
             }
@@ -128,7 +161,8 @@ namespace ContactsApp.View
         {
             try
             {
-                //_contact.VkId = vkTextBox.Text;
+                Contact contact = new Contact();
+                contact.VkId = vkTextBox.Text;
                 _vkIdError = "";
                 vkTextBox.BackColor = Color.White;
             }
@@ -143,7 +177,8 @@ namespace ContactsApp.View
         {
             try
             {
-                //_contact.DateOfBirth = dateOfBirthTimePicker.Value;
+                Contact contact = new Contact();
+                contact.DateOfBirth = dateOfBirthTimePicker.Value;
                 _dateOfBirthError = "";
                 dateOfBirthTimePicker.BackColor = Color.White;
             }
@@ -172,14 +207,14 @@ namespace ContactsApp.View
         /// <returns></returns>
         private bool CheckFormOnError()
         {
-            if((_fullNameError != "") || (_emailError != "") || 
-                (_phoneNumberError != "") || (_vkIdError != "")  || (_dateOfBirthError != ""))
+            if((_fullNameError == "") && (_emailError == "") && 
+                (_phoneNumberError == "") && (_vkIdError == "")  && (_dateOfBirthError == ""))
             {
-                MessageBox.Show(_fullNameError + " " + _emailError + 
-                    " " + _phoneNumberError + " " + _vkIdError + " " + _dateOfBirthError);
-                return false;
+                return true;
             }
-            return true;
+            MessageBox.Show(_fullNameError + " " + _emailError +
+             " " + _phoneNumberError + " " + _vkIdError + " " + _dateOfBirthError);
+            return false;
         }
 
         /// <summary>
