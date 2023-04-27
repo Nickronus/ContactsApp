@@ -24,17 +24,28 @@ namespace ContactsApp.View
         Project _currentProject;
 
         /// <summary>
+        /// Сериализатор и десериализатор.
+        /// </summary>
+        ProjectManager _projectManager;
+
+        /// <summary>
         /// Конструктор без параметров.
         /// </summary>
         public MainForm()
         {
             InitializeComponent();
-            _project = new Project();
+            _projectManager = new ProjectManager();
+            _project = _projectManager.LoadProjectFromJsonFile();
+            AddBirthdayNames();
             _project.SortContacts();
             _currentProject = new Project();
-            _currentProject.Contacts = _project.Contacts;
+            UpdateCurrentProject();
             this.KeyPreview = true;
-            //TODO запихивать в лист при загрузке из файла проект.
+            UpdateListBox();
+            if(contactsListBox.Items.Count != 0)
+            {
+                UpdateSelectedContact(0);
+            }
         }
 
         private void addContactButton_Click(object sender, EventArgs e)
@@ -43,6 +54,7 @@ namespace ContactsApp.View
             _project.SortContacts();
             UpdateCurrentProject();
             UpdateListBox();
+            _projectManager.WriteProjectToJsonFile(_project);
         }
 
         private void editContactButton_Click(object sender, EventArgs e)
@@ -65,6 +77,7 @@ namespace ContactsApp.View
                 {
                     UpdateSelectedContact(0);
                 }
+                _projectManager.WriteProjectToJsonFile(_project);
             }
         }
 
@@ -161,6 +174,7 @@ namespace ContactsApp.View
                 {
                     ClearSelectedContact();
                 }
+                _projectManager.WriteProjectToJsonFile(_project);
             }
         }
 
@@ -180,6 +194,11 @@ namespace ContactsApp.View
         {
             UpdateCurrentProject();
             UpdateListBox();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _projectManager.WriteProjectToJsonFile(_project);
         }
 
         /// <summary>
@@ -303,6 +322,18 @@ namespace ContactsApp.View
             else
             {
                 _currentProject.Contacts = _project.FindContacts(findTextBox.Text);
+            }
+        }
+
+        /// <summary>
+        /// Заполняет label с именинниками.
+        /// </summary>
+        private void AddBirthdayNames()
+        {
+            birthdayNamesLabel.Text = "";
+            for (int i = 0; i < _project.Contacts.FindAll(c => (c.DateOfBirth.Date == DateTime.Today)).Count; i++)
+            {
+                birthdayNamesLabel.Text += _project.Contacts.FindAll(c => c.DateOfBirth.Date == DateTime.Today)[i].FullName + ", ";
             }
         }
     }

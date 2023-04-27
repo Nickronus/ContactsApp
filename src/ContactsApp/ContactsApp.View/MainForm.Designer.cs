@@ -240,7 +240,7 @@
             this.birthdayNamesLabel.AutoSize = true;
             this.birthdayNamesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.birthdayNamesLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.birthdayNamesLabel.Location = new System.Drawing.Point(86, 40);
+            this.birthdayNamesLabel.Location = new System.Drawing.Point(85, 54);
             this.birthdayNamesLabel.Name = "birthdayNamesLabel";
             this.birthdayNamesLabel.Size = new System.Drawing.Size(291, 13);
             this.birthdayNamesLabel.TabIndex = 2;
@@ -381,6 +381,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "ContactsApp";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.MainSplitContainer.Panel1.ResumeLayout(false);
             this.MainSplitContainer.Panel1.PerformLayout();

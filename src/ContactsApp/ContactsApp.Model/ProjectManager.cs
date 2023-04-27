@@ -17,7 +17,7 @@
         /// <summary>
         /// Имя файла.
         /// </summary>
-        private static string _fileName = "ContactsApp.notes";
+        private static string _fileName = "\\ContactsApp.notes";
 
         /// <summary>
         /// Путь к папке сохранения.
@@ -51,11 +51,13 @@
         /// Загружает контакты из файла.
         /// </summary>
         public Project LoadProjectFromJsonFile()
-        {
+        {           
             try
             {
-                Project project = JsonConvert.DeserializeObject<Project>(Path + FileName);
-                if(project == null)
+                Project project;
+                string json = File.ReadAllText(Path + FileName);
+                project = JsonConvert.DeserializeObject<Project>(json);
+                if (project == null)
                 {
                     return new Project();
                 }
