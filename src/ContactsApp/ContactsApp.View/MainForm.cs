@@ -21,7 +21,7 @@ namespace ContactsApp.View
         /// <summary>
         /// Отображаемый проект.
         /// </summary>
-        Project _currentProject;
+        List<Contact> _displayedContacts;
 
         /// <summary>
         /// Сериализатор и десериализатор.
@@ -38,7 +38,7 @@ namespace ContactsApp.View
             _project = _projectManager.LoadProjectFromJsonFile();
             AddBirthdayNames();
             _project.SortContacts();
-            _currentProject = new Project();
+
             UpdateCurrentProject();
             this.KeyPreview = true;
             UpdateListBox();
@@ -61,11 +61,11 @@ namespace ContactsApp.View
         {
             if(contactsListBox.SelectedIndex != -1)
             {
-                int index = _project.Contacts.IndexOf(_currentProject.Contacts[contactsListBox.SelectedIndex]);
+                int index = _project.Contacts.IndexOf(_displayedContacts[contactsListBox.SelectedIndex]);
                 EditContact(index);
                 UpdateCurrentProject();
                 UpdateListBox();
-                if(_currentProject.Contacts.Count == 0)
+                if(_displayedContacts.Count == 0)
                 {
                     findTextBox.Text = "";
                     UpdateCurrentProject();
@@ -101,37 +101,37 @@ namespace ContactsApp.View
         private void addContactButton_MouseEnter(object sender, EventArgs e)
         {
             this.addContactButton.Image = Properties.Resources.add_contact_32x32;
-            this.addContactButton.BackColor = ColorTranslator.FromHtml("#F5F5FF");
+            this.addContactButton.BackColor = ContactsAppColors.mouseEnter;
         }
 
         private void addContactButton_MouseLeave(object sender, EventArgs e)
         {
             this.addContactButton.Image = Properties.Resources.add_contact_32x32_gray;
-            this.addContactButton.BackColor = Color.White;
+            this.addContactButton.BackColor = ContactsAppColors.mouseLeave;
         }
 
         private void editContactButton_MouseEnter(object sender, EventArgs e)
         {
             this.editContactButton.Image = Properties.Resources.edit_contact_32x32;
-            this.editContactButton.BackColor = ColorTranslator.FromHtml("#F5F5FF");
+            this.editContactButton.BackColor = ContactsAppColors.mouseEnter;
         }
 
         private void editContactButton_MouseLeave(object sender, EventArgs e)
         {
             this.editContactButton.Image = Properties.Resources.edit_contact_32x32_gray;
-            this.editContactButton.BackColor = Color.White;
+            this.editContactButton.BackColor = ContactsAppColors.mouseLeave;
         }
 
         private void removeContactButton_MouseEnter(object sender, EventArgs e)
         {
             this.removeContactButton.Image = Properties.Resources.remove_contact_32x32;
-            this.removeContactButton.BackColor = ColorTranslator.FromHtml("#F5F5FF");
+            this.removeContactButton.BackColor = ContactsAppColors.mouseEnter;
         }
 
         private void removeContactButton_MouseLeave(object sender, EventArgs e)
         {
             this.removeContactButton.Image = Properties.Resources.remove_contact_32x32_gray;
-            this.removeContactButton.BackColor = Color.White;
+            this.removeContactButton.BackColor = ContactsAppColors.mouseLeave;
         }
 
         private void fullNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -163,7 +163,7 @@ namespace ContactsApp.View
         {
             if(contactsListBox.SelectedIndex != -1)
             {
-                RemoveContact(_project.Contacts.IndexOf(_currentProject.Contacts[contactsListBox.SelectedIndex]));
+                RemoveContact(_project.Contacts.IndexOf(_displayedContacts[contactsListBox.SelectedIndex]));
                 UpdateCurrentProject();
                 UpdateListBox();
                 if (contactsListBox.Items.Count != 0)
@@ -207,9 +207,9 @@ namespace ContactsApp.View
         private void UpdateListBox()
         {
             contactsListBox.Items.Clear();
-            for (int i = 0; i < _currentProject.Contacts.Count(); i++)
+            for (int i = 0; i < _displayedContacts.Count(); i++)
             {
-                contactsListBox.Items.Add(_currentProject.Contacts[i].FullName);
+                contactsListBox.Items.Add(_displayedContacts[i].FullName);
             }
         }
         /// <summary>
@@ -254,11 +254,11 @@ namespace ContactsApp.View
         /// <param name="index"></param>
         private void UpdateSelectedContact(int index)
         {
-            fullNameTextBox.Text = _currentProject.Contacts[index].FullName;
-            emailTextBox.Text = _currentProject.Contacts[index].Email;
-            phoneNumberTextBox.Text = _currentProject.Contacts[index].PhoneNumber;
-            dateOfBirthTextBox.Text = _currentProject.Contacts[index].DateOfBirth.Date.ToString().Remove(11);
-            vkTextBox.Text = _currentProject.Contacts[index].VkId;
+            fullNameTextBox.Text = _displayedContacts[index].FullName;
+            emailTextBox.Text = _displayedContacts[index].Email;
+            phoneNumberTextBox.Text = _displayedContacts[index].PhoneNumber;
+            dateOfBirthTextBox.Text = _displayedContacts[index].DateOfBirth.Date.ToString().Remove(11);
+            vkTextBox.Text = _displayedContacts[index].VkId;
         }
 
         /// <summary>
@@ -317,11 +317,11 @@ namespace ContactsApp.View
         {
             if (findTextBox.Text == "")
             {
-                _currentProject.Contacts = _project.Contacts;
+                _displayedContacts = _project.Contacts;
             }
             else
             {
-                _currentProject.Contacts = _project.FindContacts(findTextBox.Text);
+                _displayedContacts = _project.FindContacts(findTextBox.Text);
             }
         }
 

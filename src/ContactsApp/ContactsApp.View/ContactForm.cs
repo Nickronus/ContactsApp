@@ -101,13 +101,13 @@ namespace ContactsApp.View
         private void addPhotoButton_MouseEnter(object sender, EventArgs e)
         {
             this.addPhotoButton.Image = Properties.Resources.add_photo_32x32;
-            this.addPhotoButton.BackColor = ColorTranslator.FromHtml("#F5F5FF");
+            this.addPhotoButton.BackColor = ContactsAppColors.mouseEnter;
         }
 
         private void addPhotoButton_MouseLeave(object sender, EventArgs e)
         {
             this.addPhotoButton.Image = Properties.Resources.add_photo_32x32_gray;
-            this.addPhotoButton.BackColor = Color.White;
+            this.addPhotoButton.BackColor = ContactsAppColors.mouseLeave;
         }
 
         private void fullNameTextBox_TextChanged(object sender, EventArgs e)
@@ -117,12 +117,12 @@ namespace ContactsApp.View
                 Contact contact = new Contact();
                 contact.FullName = fullNameTextBox.Text;
                 _fullNameError = "";
-                fullNameTextBox.BackColor = Color.White;
+                fullNameTextBox.BackColor = ContactsAppColors.allOkColor;
             }
             catch (ArgumentException exception)
             {
                 _fullNameError = exception.Message;
-                fullNameTextBox.BackColor = Color.LightPink;
+                fullNameTextBox.BackColor = ContactsAppColors.errorColor;
             }
         }
 
@@ -133,12 +133,12 @@ namespace ContactsApp.View
                 Contact contact = new Contact();
                 contact.Email = emailTextBox.Text;
                 _emailError = "";
-                emailTextBox.BackColor = Color.White;
+                emailTextBox.BackColor = ContactsAppColors.allOkColor;
             }
             catch (ArgumentException exception)
             {
                 _emailError = exception.Message;
-                emailTextBox.BackColor = Color.LightPink;
+                emailTextBox.BackColor = ContactsAppColors.errorColor;
             }
         }
 
@@ -149,12 +149,12 @@ namespace ContactsApp.View
                 Contact contact = new Contact();
                 contact.PhoneNumber = phoneNumberTextBox.Text;
                 _phoneNumberError = "";
-                phoneNumberTextBox.BackColor = Color.White;
+                phoneNumberTextBox.BackColor = ContactsAppColors.allOkColor;
             }
             catch (ArgumentException exception)
             {
                 _phoneNumberError = exception.Message;
-                phoneNumberTextBox.BackColor = Color.LightPink;
+                phoneNumberTextBox.BackColor = ContactsAppColors.errorColor;
             }
         }
 
@@ -165,12 +165,12 @@ namespace ContactsApp.View
                 Contact contact = new Contact();
                 contact.VkId = vkTextBox.Text;
                 _vkIdError = "";
-                vkTextBox.BackColor = Color.White;
+                vkTextBox.BackColor = ContactsAppColors.allOkColor;
             }
             catch (ArgumentException exception)
             {
                 _vkIdError = exception.Message;
-                vkTextBox.BackColor = Color.LightPink;
+                vkTextBox.BackColor = ContactsAppColors.errorColor;
             }
         }
 
@@ -181,12 +181,12 @@ namespace ContactsApp.View
                 Contact contact = new Contact();
                 contact.DateOfBirth = dateOfBirthTimePicker.Value;
                 _dateOfBirthError = "";
-                dateOfBirthTimePicker.BackColor = Color.White;
+                dateOfBirthTimePicker.BackColor = ContactsAppColors.allOkColor;
             }
             catch (ArgumentException exception)
             {
                 _dateOfBirthError = exception.Message;
-                dateOfBirthTimePicker.BackColor = Color.LightPink;
+                dateOfBirthTimePicker.BackColor = ContactsAppColors.errorColor;
             }
         }
 
