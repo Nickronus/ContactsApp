@@ -82,7 +82,6 @@ namespace ContactsApp.View
         {
             InitializeComponent();
             Contact = contact;
-            UpdateForm();
         }
 
         private void oKButton_Click(object sender, EventArgs e)
