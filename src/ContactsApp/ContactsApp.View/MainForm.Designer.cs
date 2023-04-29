@@ -379,6 +379,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.MainSplitContainer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "MainForm";
             this.Text = "ContactsApp";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);

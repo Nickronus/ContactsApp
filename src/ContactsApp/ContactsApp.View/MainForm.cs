@@ -40,7 +40,6 @@ namespace ContactsApp.View
             _project.SortContacts();
 
             UpdateCurrentProject();
-            this.KeyPreview = true;
             UpdateListBox();
             if(contactsListBox.Items.Count != 0)
             {
@@ -63,6 +62,7 @@ namespace ContactsApp.View
             {
                 int index = _project.Contacts.IndexOf(_displayedContacts[contactsListBox.SelectedIndex]);
                 EditContact(index);
+                _project.SortContacts();
                 UpdateCurrentProject();
                 UpdateListBox();
                 if(_displayedContacts.Count == 0)
@@ -92,46 +92,43 @@ namespace ContactsApp.View
 
         private void closeInfoButton_Click(object sender, EventArgs e)
         {
-            this.birthdayInfoPanel.Visible = false;
-            this.birthdayInfoPictureBox.Visible = false;
-            this.birthdayLabel.Visible = false;
-            this.birthdayNamesLabel.Visible = false;
+            CloseBirthdayContactsPanel();
         }
 
         private void addContactButton_MouseEnter(object sender, EventArgs e)
         {
             this.addContactButton.Image = Properties.Resources.add_contact_32x32;
-            this.addContactButton.BackColor = ContactsAppColors.mouseEnter;
+            this.addContactButton.BackColor = ContactsAppColors.MouseEnter;
         }
 
         private void addContactButton_MouseLeave(object sender, EventArgs e)
         {
             this.addContactButton.Image = Properties.Resources.add_contact_32x32_gray;
-            this.addContactButton.BackColor = ContactsAppColors.mouseLeave;
+            this.addContactButton.BackColor = ContactsAppColors.MouseLeave;
         }
 
         private void editContactButton_MouseEnter(object sender, EventArgs e)
         {
             this.editContactButton.Image = Properties.Resources.edit_contact_32x32;
-            this.editContactButton.BackColor = ContactsAppColors.mouseEnter;
+            this.editContactButton.BackColor = ContactsAppColors.MouseEnter;
         }
 
         private void editContactButton_MouseLeave(object sender, EventArgs e)
         {
             this.editContactButton.Image = Properties.Resources.edit_contact_32x32_gray;
-            this.editContactButton.BackColor = ContactsAppColors.mouseLeave;
+            this.editContactButton.BackColor = ContactsAppColors.MouseLeave;
         }
 
         private void removeContactButton_MouseEnter(object sender, EventArgs e)
         {
             this.removeContactButton.Image = Properties.Resources.remove_contact_32x32;
-            this.removeContactButton.BackColor = ContactsAppColors.mouseEnter;
+            this.removeContactButton.BackColor = ContactsAppColors.MouseEnter;
         }
 
         private void removeContactButton_MouseLeave(object sender, EventArgs e)
         {
             this.removeContactButton.Image = Properties.Resources.remove_contact_32x32_gray;
-            this.removeContactButton.BackColor = ContactsAppColors.mouseLeave;
+            this.removeContactButton.BackColor = ContactsAppColors.MouseLeave;
         }
 
         private void fullNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -166,14 +163,7 @@ namespace ContactsApp.View
                 RemoveContact(_project.Contacts.IndexOf(_displayedContacts[contactsListBox.SelectedIndex]));
                 UpdateCurrentProject();
                 UpdateListBox();
-                if (contactsListBox.Items.Count != 0)
-                {
-                    UpdateSelectedContact(0);
-                }
-                else
-                {
-                    ClearSelectedContact();
-                }
+                ClearSelectedContact();
                 _projectManager.WriteProjectToJsonFile(_project);
             }
         }
@@ -254,11 +244,12 @@ namespace ContactsApp.View
         /// <param name="index"></param>
         private void UpdateSelectedContact(int index)
         {
-            fullNameTextBox.Text = _displayedContacts[index].FullName;
-            emailTextBox.Text = _displayedContacts[index].Email;
-            phoneNumberTextBox.Text = _displayedContacts[index].PhoneNumber;
-            dateOfBirthTextBox.Text = _displayedContacts[index].DateOfBirth.Date.ToString().Remove(11);
-            vkTextBox.Text = _displayedContacts[index].VkId;
+            var contact = _displayedContacts[index];
+            fullNameTextBox.Text = contact.FullName;
+            emailTextBox.Text = contact.Email;
+            phoneNumberTextBox.Text = contact.PhoneNumber;
+            dateOfBirthTextBox.Text = contact.DateOfBirth.Date.ToString().Remove(11);
+            vkTextBox.Text = contact.VkId;
         }
 
         /// <summary>
@@ -271,26 +262,6 @@ namespace ContactsApp.View
             phoneNumberTextBox.Text = "";
             dateOfBirthTextBox.Text = "";
             vkTextBox.Text = "";
-        }
-
-        /// <summary>
-        /// Добавление рандомного контакта.
-        /// </summary>
-        private void AddRandomContact()
-        {
-            Random rnd = new Random();
-            string[] firstNames = { "Иван ", "Катя ", "Владимир ", "Артём ",
-                          "Дмитрий ", "Яна ", "Гриша ", "Семён ",
-                          "Добрыня ", "Маруся " };
-            string[] secondNames = { "Авакян", "Аматуни", "Багратуни", "Брутян",
-                            "Галустян", "Григорян", "Дарбинян", "Есаянц",
-                            "Иоаннисян", "Луспекян" };
-
-            Contact contact = new Contact();
-            int fIndex = rnd.Next(firstNames.Length);
-            int sIndex = rnd.Next(secondNames.Length);
-            contact.FullName = firstNames[fIndex] + secondNames[sIndex];
-            _project.Contacts.Add(contact);
         }
 
         /// <summary>
@@ -331,10 +302,26 @@ namespace ContactsApp.View
         private void AddBirthdayNames()
         {
             birthdayNamesLabel.Text = "";
-            for (int i = 0; i < _project.Contacts.FindAll(c => (c.DateOfBirth.Date == DateTime.Today)).Count; i++)
+            List<Contact> contacts = _project.Contacts.FindAll(c => (c.DateOfBirth.Date == DateTime.Today));
+            if(contacts.Count != 0)
             {
-                birthdayNamesLabel.Text += _project.Contacts.FindAll(c => c.DateOfBirth.Date == DateTime.Today)[i].FullName + ", ";
+                for (int i = 0; i < contacts.Count - 1; i++)
+                {
+                    birthdayNamesLabel.Text += contacts[i].FullName + ", ";
+                }
+                birthdayNamesLabel.Text += contacts[contacts.Count - 1].FullName;
             }
+        }
+
+        /// <summary>
+        /// Убирает панель именинников.
+        /// </summary>
+        private void CloseBirthdayContactsPanel()
+        {
+            birthdayInfoPanel.Visible = false;
+            birthdayInfoPictureBox.Visible = false;
+            birthdayLabel.Visible = false;
+            birthdayNamesLabel.Visible = false;
         }
     }
 }

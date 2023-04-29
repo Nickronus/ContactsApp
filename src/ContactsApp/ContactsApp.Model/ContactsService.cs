@@ -21,7 +21,7 @@
         {
                 if (value.Length > maxLength)
                 {
-                    throw new ArgumentException(String.Format("Error. Size more then max."));
+                    throw new ArgumentException(String.Format("Exceeded the maximum number of characters"));
                 }
         }
     }

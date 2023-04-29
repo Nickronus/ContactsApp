@@ -103,7 +103,11 @@ namespace ContactsApp.Model
             set
             {
                 string allowedChars = "1234567890+- )(";
-                value = new string(value.Where(c => allowedChars.Contains(c)).ToArray());
+                if (! value.All(c => allowedChars.Contains(c)))
+                {
+                    throw new ArgumentException(String.Format("The phone number contains invalid characters"));
+                }
+                    value = new string(value.Where(c => allowedChars.Contains(c)).ToArray());
                 _phoneNumber = value;
             }
         }
@@ -121,7 +125,7 @@ namespace ContactsApp.Model
             {
                 if ((value > DateTime.Now)||(value < new DateTime(1900, 1, 1)))
                 {
-                    throw new ArgumentException(String.Format("Error. Incorrect data."));
+                    throw new ArgumentException(String.Format("Invalid date"));
                 }
                 _dateOfBirth = value;
             }

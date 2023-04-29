@@ -55,6 +55,10 @@ namespace ContactsApp.View
             set
             {
                 _contact = value;
+                if(value != null)
+                {
+                    UpdateForm();
+                }
             }
         }
 
@@ -65,7 +69,6 @@ namespace ContactsApp.View
         {
             InitializeComponent();
             _contact = new Contact();
-            //_contact = new Contact("Иван Иванович", "ivashka@ivan.com", "89001003355", new DateTime(2000, 1, 1), "");
         }
 
         /// <summary>
@@ -77,7 +80,6 @@ namespace ContactsApp.View
             InitializeComponent();
             Contact = contact;
             UpdateForm();
-            //_contact = new Contact("Иван Иванович", "ivashka@ivan.com", "89001003355", new DateTime(2000, 1, 1), "");
         }
 
         private void oKButton_Click(object sender, EventArgs e)
@@ -85,29 +87,28 @@ namespace ContactsApp.View
             if(CheckFormOnError())
             {
                 UpdateContact();
+                DialogResult = DialogResult.OK;
                 this.Close();
             }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Не сохранять контакт?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
-                Contact = null;
-                this.Close();
-            }
+            Contact = null;
+            DialogResult = DialogResult.Cancel;
+            this.Close();
         }
 
         private void addPhotoButton_MouseEnter(object sender, EventArgs e)
         {
             this.addPhotoButton.Image = Properties.Resources.add_photo_32x32;
-            this.addPhotoButton.BackColor = ContactsAppColors.mouseEnter;
+            this.addPhotoButton.BackColor = ContactsAppColors.MouseEnter;
         }
 
         private void addPhotoButton_MouseLeave(object sender, EventArgs e)
         {
             this.addPhotoButton.Image = Properties.Resources.add_photo_32x32_gray;
-            this.addPhotoButton.BackColor = ContactsAppColors.mouseLeave;
+            this.addPhotoButton.BackColor = ContactsAppColors.MouseLeave;
         }
 
         private void fullNameTextBox_TextChanged(object sender, EventArgs e)
@@ -117,12 +118,12 @@ namespace ContactsApp.View
                 Contact contact = new Contact();
                 contact.FullName = fullNameTextBox.Text;
                 _fullNameError = "";
-                fullNameTextBox.BackColor = ContactsAppColors.allOkColor;
+                fullNameTextBox.BackColor = ContactsAppColors.AllOkColor;
             }
             catch (ArgumentException exception)
             {
                 _fullNameError = exception.Message;
-                fullNameTextBox.BackColor = ContactsAppColors.errorColor;
+                fullNameTextBox.BackColor = ContactsAppColors.ErrorColor;
             }
         }
 
@@ -133,12 +134,12 @@ namespace ContactsApp.View
                 Contact contact = new Contact();
                 contact.Email = emailTextBox.Text;
                 _emailError = "";
-                emailTextBox.BackColor = ContactsAppColors.allOkColor;
+                emailTextBox.BackColor = ContactsAppColors.AllOkColor;
             }
             catch (ArgumentException exception)
             {
                 _emailError = exception.Message;
-                emailTextBox.BackColor = ContactsAppColors.errorColor;
+                emailTextBox.BackColor = ContactsAppColors.ErrorColor;
             }
         }
 
@@ -149,12 +150,12 @@ namespace ContactsApp.View
                 Contact contact = new Contact();
                 contact.PhoneNumber = phoneNumberTextBox.Text;
                 _phoneNumberError = "";
-                phoneNumberTextBox.BackColor = ContactsAppColors.allOkColor;
+                phoneNumberTextBox.BackColor = ContactsAppColors.AllOkColor;
             }
             catch (ArgumentException exception)
             {
                 _phoneNumberError = exception.Message;
-                phoneNumberTextBox.BackColor = ContactsAppColors.errorColor;
+                phoneNumberTextBox.BackColor = ContactsAppColors.ErrorColor;
             }
         }
 
@@ -165,12 +166,12 @@ namespace ContactsApp.View
                 Contact contact = new Contact();
                 contact.VkId = vkTextBox.Text;
                 _vkIdError = "";
-                vkTextBox.BackColor = ContactsAppColors.allOkColor;
+                vkTextBox.BackColor = ContactsAppColors.AllOkColor;
             }
             catch (ArgumentException exception)
             {
                 _vkIdError = exception.Message;
-                vkTextBox.BackColor = ContactsAppColors.errorColor;
+                vkTextBox.BackColor = ContactsAppColors.ErrorColor;
             }
         }
 
@@ -181,17 +182,17 @@ namespace ContactsApp.View
                 Contact contact = new Contact();
                 contact.DateOfBirth = dateOfBirthTimePicker.Value;
                 _dateOfBirthError = "";
-                dateOfBirthTimePicker.BackColor = ContactsAppColors.allOkColor;
+                dateOfBirthTimePicker.BackColor = ContactsAppColors.AllOkColor;
             }
             catch (ArgumentException exception)
             {
                 _dateOfBirthError = exception.Message;
-                dateOfBirthTimePicker.BackColor = ContactsAppColors.errorColor;
+                dateOfBirthTimePicker.BackColor = ContactsAppColors.ErrorColor;
             }
         }
 
         private void addPhotoButton_Click(object sender, EventArgs e)
-        {
+        {/*Раскомментировать после добавления логики в кнопку добавления фото.
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "Изображения (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
             fileDialog.Title = "Выберите изображение";
@@ -200,7 +201,7 @@ namespace ContactsApp.View
             {
                 personPictureBox.ImageLocation = fileDialog.FileName;
             }
-
+            */
         }
 
         /// <summary>
@@ -226,8 +227,28 @@ namespace ContactsApp.View
             {
                 return true;
             }
-            MessageBox.Show(_fullNameError + " " + _emailError +
-             " " + _phoneNumberError + " " + _vkIdError + " " + _dateOfBirthError);
+            string errorMessage = "";
+            if(_fullNameError != "")
+            {
+                errorMessage += _fullNameError + " in Full Name.";
+            }
+            if (_emailError != "")
+            {
+                errorMessage += "\n" + _emailError + " in Email.";
+            }
+            if (_phoneNumberError != "")
+            {
+                errorMessage += "\n" + _phoneNumberError;
+            }
+            if (_vkIdError != "")
+            {
+                errorMessage += "\n" + _vkIdError + " in Vk Id.";
+            }
+            if (_dateOfBirthError != "")
+            {
+                errorMessage += "\n" + _dateOfBirthError;
+            }
+            MessageBox.Show(errorMessage);
             return false;
         }
 

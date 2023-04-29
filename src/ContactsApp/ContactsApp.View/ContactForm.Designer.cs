@@ -189,9 +189,12 @@
             // dateOfBirthTimePicker
             // 
             this.dateOfBirthTimePicker.Location = new System.Drawing.Point(118, 219);
+            this.dateOfBirthTimePicker.MaxDate = new System.DateTime(2023, 4, 29, 0, 0, 0, 0);
+            this.dateOfBirthTimePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateOfBirthTimePicker.Name = "dateOfBirthTimePicker";
             this.dateOfBirthTimePicker.Size = new System.Drawing.Size(204, 20);
             this.dateOfBirthTimePicker.TabIndex = 25;
+            this.dateOfBirthTimePicker.Value = new System.DateTime(2023, 4, 29, 0, 0, 0, 0);
             this.dateOfBirthTimePicker.ValueChanged += new System.EventHandler(this.dateOfBirthTimePicker_ValueChanged);
             // 
             // ContactForm

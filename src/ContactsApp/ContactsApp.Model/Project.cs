@@ -59,14 +59,5 @@
             Contacts.Sort((c1, c2) => c1.FullName.CompareTo(c2.FullName));
             return Contacts;
         }
-
-        /// <summary>
-        /// Приведение строки к стилю "Каждое слово с заглавной буквы".
-        /// </summary>
-        private string ToCapitalLettersStyle(string value)
-        {
-            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-            return textInfo.ToTitleCase(value);
-        }
     }
 }
