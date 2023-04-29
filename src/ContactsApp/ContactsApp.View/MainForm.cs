@@ -11,6 +11,9 @@ using ContactsApp.Model;
 
 namespace ContactsApp.View
 {
+    /// <summary>
+    /// Главная форма.
+    /// </summary>
     public partial class MainForm : Form
     {
         /// <summary>
@@ -286,14 +289,7 @@ namespace ContactsApp.View
         /// </summary>
         private void UpdateCurrentProject()
         {
-            if (findTextBox.Text == "")
-            {
-                _displayedContacts = _project.Contacts;
-            }
-            else
-            {
-                _displayedContacts = _project.FindContacts(findTextBox.Text);
-            }
+            _displayedContacts = _project.FindContacts(findTextBox.Text);
         }
 
         /// <summary>
@@ -302,9 +298,13 @@ namespace ContactsApp.View
         private void AddBirthdayNames()
         {
             birthdayNamesLabel.Text = "";
-            List<Contact> contacts = _project.Contacts.FindAll(c => (c.DateOfBirth.Date == DateTime.Today));
+
+            List<Contact> contacts = _project.Contacts.FindAll(c => 
+            (c.DateOfBirth.Date.Day == DateTime.Today.Day) 
+            && (c.DateOfBirth.Date.Month == DateTime.Today.Month));
+
             if(contacts.Count != 0)
-            {
+            {              
                 for (int i = 0; i < contacts.Count - 1; i++)
                 {
                     birthdayNamesLabel.Text += contacts[i].FullName + ", ";
@@ -319,9 +319,6 @@ namespace ContactsApp.View
         private void CloseBirthdayContactsPanel()
         {
             birthdayInfoPanel.Visible = false;
-            birthdayInfoPictureBox.Visible = false;
-            birthdayLabel.Visible = false;
-            birthdayNamesLabel.Visible = false;
         }
     }
 }

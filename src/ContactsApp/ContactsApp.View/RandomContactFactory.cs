@@ -7,12 +7,15 @@ using ContactsApp.Model;
 
 namespace ContactsApp.View
 {
-    internal class RandomContactFactory
+    /// <summary>
+    /// Создаёт контакты.
+    /// </summary>
+    public class RandomContactFactory
     {
         /// <summary>
         /// Добавление рандомного контакта.
         /// </summary>
-        private static void AddRandomContact(Project project)
+        public static Contact AddRandomContact()
         {
             Random random = new Random();
             string[] firstNames = { "Иван ", "Катя ", "Владимир ", "Артём ",
@@ -26,7 +29,7 @@ namespace ContactsApp.View
             int fIndex = random.Next(firstNames.Length);
             int sIndex = random.Next(secondNames.Length);
             contact.FullName = firstNames[fIndex] + secondNames[sIndex];
-            project.Contacts.Add(contact);
+            return contact;
         }
     }
 }

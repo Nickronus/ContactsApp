@@ -11,6 +11,9 @@ using ContactsApp.Model;
 
 namespace ContactsApp.View
 {
+    /// <summary>
+    /// Форма контакта.
+    /// </summary>
     public partial class ContactForm : Form
     {
         /// <summary>
