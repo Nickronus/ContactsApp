@@ -151,6 +151,7 @@
             this.addPhotoButton.Size = new System.Drawing.Size(100, 47);
             this.addPhotoButton.TabIndex = 23;
             this.addPhotoButton.UseVisualStyleBackColor = false;
+            this.addPhotoButton.Click += new System.EventHandler(this.addPhotoButton_Click);
             this.addPhotoButton.MouseEnter += new System.EventHandler(this.addPhotoButton_MouseEnter);
             this.addPhotoButton.MouseLeave += new System.EventHandler(this.addPhotoButton_MouseLeave);
             // 

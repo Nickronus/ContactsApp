@@ -190,6 +190,19 @@ namespace ContactsApp.View
             }
         }
 
+        private void addPhotoButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Изображения (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
+            fileDialog.Title = "Выберите изображение";
+
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                personPictureBox.ImageLocation = fileDialog.FileName;
+            }
+
+        }
+
         /// <summary>
         /// Обновление данных контакта.
         /// </summary>
