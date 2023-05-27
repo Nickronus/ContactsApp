@@ -15,47 +15,47 @@ namespace ContactsApp.Model.UnitTests
         [Test(Description = "Позитивнй тест присвоения контактов")]
         public void Contacts_SetCorrectValue_ReturnsCorrectValue()
         {
-            //Setup
+            // Setup
             Project project = new Project();
             Contact contact = new Contact();
             List<Contact> expectedListContacts = new List<Contact>();
             expectedListContacts.Add(contact);
 
-            //Act
+            // Act
             project.Contacts.Add(contact);
             var actualListContacts = project.Contacts;
 
-            //Assert
+            // Assert
             UnitTestService.AssertCompareContactsLists(expectedListContacts, actualListContacts);
         }
 
         [Test(Description = "Позитивнй тест конструктора без параметров")]
         public void Constructor_SetCorrectParameters_ReturnsCorrectValues()
         {
-            //Setup
+            // Setup
             Project project = new Project();
             List<Contact> expectedListContacts = new List<Contact>();
 
-            //Act
+            // Act
             var actualListContacts = project.Contacts;
 
-            //Assert
+            // Assert
             Assert.AreEqual(expectedListContacts, actualListContacts);
         }
 
         [Test(Description = "Позитивнй тест конструктора с передаваемым списком контактов")]
         public void Constructor_SetTransmittedParameters_ReturnsCorrectValues()
         {
-            //Setup
+            // Setup
             List<Contact> contacts = new List<Contact>();
             contacts.Add(new Contact());
             Project project = new Project(contacts);
             var expectedListContacts = contacts;
 
-            //Act
+            // Act
             var actualListContacts = project.Contacts;
 
-            //Assert
+            // Assert
             Assert.AreEqual(expectedListContacts, actualListContacts);
         }
 
@@ -64,7 +64,7 @@ namespace ContactsApp.Model.UnitTests
         {
             // Setup
             var birthDate = DateTime.Today;
-            var notTodayDate = birthDate.AddDays(-7);
+            var notTodayDate = new DateTime(2000, 1, 1);
 
             Project project = new Project();
             List<Contact> birthdayContactsList = new List<Contact>();

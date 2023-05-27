@@ -32,14 +32,50 @@ namespace ContactsApp.Model.UnitTests
         /// <summary>
         /// Сравнение двух списков контактов.
         /// </summary>
-        /// <param name="expectedList"></param>
-        /// <param name="actualList"></param>
-        public static void AssertCompareContactsLists(List<Contact> expectedList, List<Contact> actualList)
+        /// <param name="expected"></param>
+        /// <param name="actual"></param>
+        public static void AssertCompareContactsLists(List<Contact> expected, List<Contact> actual)
         {
-            for (int i = 0; i < actualList.Count; i++)
+            for (int i = 0; i < actual.Count; i++)
             {
-                AssertComparedContacts(expectedList[i], actualList[i]);
+                AssertComparedContacts(expected[i], actual[i]);
             }
+        }
+
+        /// <summary>
+        /// Сравнение данных о контактах.
+        /// </summary>
+        /// <param name="expectedFullName"></param>
+        /// <param name="actualFullName"></param>
+        /// <param name="expectedEmail"></param>
+        /// <param name="actualEmail"></param>
+        /// <param name="expectedPhoneNumber"></param>
+        /// <param name="actualPhoneNumber"></param>
+        /// <param name="expectedDateOfBirth"></param>
+        /// <param name="actualDateOfBirth"></param>
+        /// <param name="expectedVkId"></param>
+        /// <param name="actualIdVk"></param>
+        public static void AssertComparedContactData(string expectedFullName,
+                                                     string actualFullName,
+                                                     string expectedEmail,
+                                                     string actualEmail,
+                                                     string expectedPhoneNumber,
+                                                     string actualPhoneNumber,
+                                                     DateTime expectedDateOfBirth,
+                                                     DateTime actualDateOfBirth,
+                                                     string expectedVkId,
+                                                     string actualIdVk)
+        {
+            Assert.Multiple(
+                () =>
+                {
+                    Assert.AreEqual(expectedFullName, actualFullName);
+                    Assert.AreEqual(expectedEmail, actualEmail);
+                    Assert.AreEqual(expectedPhoneNumber, actualPhoneNumber);
+                    Assert.AreEqual(expectedDateOfBirth, actualDateOfBirth);
+                    Assert.AreEqual(expectedVkId, actualIdVk);
+                }
+                );
         }
     }
 }

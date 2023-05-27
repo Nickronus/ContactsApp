@@ -14,14 +14,14 @@ namespace ContactsApp.Model.UnitTests
         [Test(Description = "Позитивный тест конструктора без параметров")]
         public void Constructor_SetStandardParameters_ReturnsStandardValues()
         {
-            //Setup
+            // Setup
             var expectedFullName = "";
             var expectedEmail = "";
             var expectedPhoneNumber = "";
             var expectedDateOfBirth = new DateTime(2000, 1, 1);
             var expectedVkId = "";
 
-            //Act
+            // Act
             Contact contact = new Contact();
 
             var actualFullName = contact.FullName;
@@ -30,24 +30,23 @@ namespace ContactsApp.Model.UnitTests
             var actualDateOfBirth = contact.DateOfBirth;
             var actualIdVk = contact.VkId;
 
-            //Assert
-            Assert.Multiple(
-                () =>
-                {
-                    Assert.AreEqual(expectedFullName, actualFullName);
-                    Assert.AreEqual(expectedEmail, actualEmail);
-                    Assert.AreEqual(expectedPhoneNumber, actualPhoneNumber);
-                    Assert.AreEqual(expectedDateOfBirth, actualDateOfBirth);
-                    Assert.AreEqual(expectedVkId, actualIdVk);
-                }
-                );
+            // Assert
+            UnitTestService.AssertComparedContactData(expectedFullName,
+                                      actualFullName,
+                                      expectedEmail,
+                                      actualEmail,
+                                      expectedPhoneNumber,
+                                      actualPhoneNumber,
+                                      expectedDateOfBirth,
+                                      actualDateOfBirth,
+                                      expectedVkId,
+                                      actualIdVk);
         }
 
         [Test(Description = "Позитивный тест конструктора с параметрами")]
         public void Constructor_SetCorrectParameters_ReturnsCorrectValues()
         {
-            //Setup
-
+            // Setup
             var correctFullName = "Ivan Ivanovich";
             var expectedFullName = correctFullName;
 
@@ -63,7 +62,7 @@ namespace ContactsApp.Model.UnitTests
             var correctVkId = "1234567890";
             var expectedVkId = correctVkId;
 
-            //Act
+            // Act
             Contact contact = new Contact(correctFullName, correctEmail, correctPhoneNumber, correctDateOfBirth, correctVkId);
 
             var actualFullName = contact.FullName;
@@ -72,17 +71,17 @@ namespace ContactsApp.Model.UnitTests
             var actualDateOfBirth = contact.DateOfBirth;
             var actualIdVk = contact.VkId;
 
-            //Assert
-            Assert.Multiple(
-                () =>
-                {
-                    Assert.AreEqual(expectedFullName, actualFullName);
-                    Assert.AreEqual(expectedEmail, actualEmail);
-                    Assert.AreEqual(expectedPhoneNumber, actualPhoneNumber);
-                    Assert.AreEqual(expectedDateOfBirth, actualDateOfBirth);
-                    Assert.AreEqual(expectedVkId, actualIdVk);
-                }
-                );
+            // Assert
+            UnitTestService.AssertComparedContactData(expectedFullName,
+                                      actualFullName,
+                                      expectedEmail,
+                                      actualEmail,
+                                      expectedPhoneNumber,
+                                      actualPhoneNumber,
+                                      expectedDateOfBirth,
+                                      actualDateOfBirth,
+                                      expectedVkId,
+                                      actualIdVk);
         }
 
         [Test(Description = "Негативный тест конструктора с параметрами")]
@@ -199,7 +198,7 @@ namespace ContactsApp.Model.UnitTests
             var message = "Должно возникать исключение, если номеру телефона пытаются присвоить "
                 + "некорректные данные";
 
-            //Assert
+            // Assert
             Assert.Throws<ArgumentException>(() =>
             {
                 // Act
@@ -225,7 +224,7 @@ namespace ContactsApp.Model.UnitTests
         }
 
         [Test(Description = "Негативный тест присвоения даты")]
-        public void DateOfBirth_SetLittleDate_ArgumetException()
+        public void DateOfBirth_SetLittleDate_ArgumentException()
         {
             // Setup
             Contact contact = new Contact();
@@ -242,7 +241,7 @@ namespace ContactsApp.Model.UnitTests
         }
 
         [Test(Description = "Негативный тест присвоения даты")]
-        public void DateOfBirth_SetBigDate_ArgumetException()
+        public void DateOfBirth_SetBigDate_ArgumentException()
         {
             // Setup
             Contact contact = new Contact();
@@ -266,11 +265,11 @@ namespace ContactsApp.Model.UnitTests
             var correctVkId = "1234567890";
             var expectedVkId = correctVkId;
 
-            //Act
+            // Act
             contact.VkId = correctVkId;
             var actualVkId = contact.VkId;
 
-            //Assert
+            // Assert
             Assert.AreEqual(expectedVkId, actualVkId);
         }
 

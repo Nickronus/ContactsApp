@@ -6,7 +6,6 @@ AppVersion=1.0
 WizardStyle=modern
 DefaultDirName={pf}\Golubev\ContactsApp
 DefaultGroupName=ContactsApp
-UninstallDisplayIcon={app}\Unistal.exe
 Compression=lzma2
 SolidCompression=yes
 OutputDir="Output"
@@ -18,8 +17,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "..\src\ContactsApp\ContactsApp.View\bin\Debug\ContactsApp.exe"; DestDir: "{app}"
-Source: "..\src\ContactsApp\ContactsApp.View\bin\Debug\ContactsApp.Model.dll"; DestDir: "{app}"
-Source: "..\src\ContactsApp\ContactsApp.View\bin\Debug\Newtonsoft.Json.dll"; DestDir: "{app}"
+Source: "..\src\ContactsApp\ContactsApp.View\bin\Debug\*.dll"; DestDir: "{app}"
 
 [Icons]
 Name: "{group}\ContactsApp"; Filename: "{app}\ContactsApp.exe"  

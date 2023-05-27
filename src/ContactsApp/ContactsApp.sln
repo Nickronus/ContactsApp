@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsApp.View", "Contact
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsApp.Model", "ContactsApp.Model\ContactsApp.Model.csproj", "{ADD59414-C205-470D-8904-0A26AC640093}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsApp.Model.UnitTests", "Testing\ContactsApp.Model.UnitTests\ContactsApp.Model.UnitTests.csproj", "{116F0075-ECF7-4FBB-859B-2340C972C20E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactsApp.Model.UnitTests", "Testing\ContactsApp.Model.UnitTests\ContactsApp.Model.UnitTests.csproj", "{116F0075-ECF7-4FBB-859B-2340C972C20E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{171D7088-D554-4FC5-8202-A8F09C30D8AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +32,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{116F0075-ECF7-4FBB-859B-2340C972C20E} = {171D7088-D554-4FC5-8202-A8F09C30D8AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F34406A9-9497-4992-951A-9282955CF0D5}
